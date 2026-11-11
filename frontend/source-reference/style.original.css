@@ -1,0 +1,82 @@
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 4px;
+}
+
+.glass-hero-card {
+  background: linear-gradient(135deg, #1e2530 0%, #161c24 60%, #222b38 100%);
+  box-shadow: 0 10px 25px -5px rgba(30, 37, 48, 0.2);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.card-premium {
+  background-color: #ffffff;
+  border: 1px solid #e2dcd4;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease-in-out;
+}
+
+.dark .card-premium {
+  background-color: #1e293b;
+  border-color: #334155;
+  color: #f8fafc;
+}
+
+.card-premium:hover {
+  border-color: #f59e0b;
+}
+
+.input-premium {
+  background-color: #ffffff;
+  border: 1px solid #d4cfc4;
+  color: #1e2530;
+  font-weight: 600;
+  transition: all 0.15s ease;
+}
+
+.dark .input-premium {
+  background-color: #0f172a;
+  border-color: #334155;
+  color: #f8fafc;
+}
+
+.input-premium:focus {
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #printableReceipt,
+  #printableReceipt * {
+    visibility: visible;
+  }
+
+  #printableReceipt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    color: #000 !important;
+    background: #fff !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}

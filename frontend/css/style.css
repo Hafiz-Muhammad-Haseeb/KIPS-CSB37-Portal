@@ -1,0 +1,186 @@
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #374151;
+    border-radius: 4px;
+}
+
+.glass-hero-card {
+    background: linear-gradient(135deg, #1e2530 0%, #161c24 60%, #222b38 100%);
+    box-shadow: 0 10px 25px -5px rgba(30, 37, 48, 0.2);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.card-premium {
+    background-color: #ffffff;
+    border: 1px solid #e2dcd4;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    transition: all 0.2s ease-in-out;
+}
+
+.dark .card-premium {
+    background-color: #1e293b;
+    border-color: #334155;
+    color: #f8fafc;
+}
+
+.card-premium:hover {
+    border-color: #f59e0b;
+}
+
+.input-premium {
+    background-color: #ffffff;
+    border: 1px solid #d4cfc4;
+    color: #1e2530;
+    font-weight: 600;
+    transition: all 0.15s ease;
+}
+
+.dark .input-premium {
+    background-color: #0f172a;
+    border-color: #334155;
+    color: #f8fafc;
+}
+
+.input-premium:focus {
+    border-color: #f59e0b;
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #printableReceipt,
+    #printableReceipt * {
+        visibility: visible;
+    }
+
+    #printableReceipt {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        color: #000 !important;
+        background: #fff !important;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+}
+.security-banner-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 8px 18px;
+    background-color: rgba(16, 185, 129, 0.08); /* Dark subtle green bg */
+    border: 1px solid rgba(16, 185, 129, 0.3); /* Border matching your current design */
+    border-radius: 9999px; /* Pill Shape */
+    color: #10b981; /* Neon green text */
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+  
+  .pill-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .pill-item .icon {
+    width: 15px;
+    height: 15px;
+    stroke: #10b981;
+  }
+  
+  .pill-dot {
+    color: #047857; /* Darker green for dot */
+    font-size: 12px;
+  }
+
+
+/* ==========================================
+   CSB-37 NEXUS
+   GLOBAL INTERACTIVE HOVER & FOCUS SYSTEM
+   ========================================== */
+
+:root {
+    --interactive-orange: #f59e0b;
+    --interactive-orange-soft: rgba(245, 158, 11, 0.10);
+    --interactive-orange-border: rgba(245, 158, 11, 0.75);
+}
+
+/* Smooth transitions */
+.card-premium,
+.nav-btn,
+button,
+a,
+[role="button"],
+.stat-card,
+.interactive-card {
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease,
+        outline-color 0.2s ease;
+}
+
+/* Premium card hover */
+.card-premium:hover,
+.stat-card:hover,
+.interactive-card:hover {
+    border-color: var(--interactive-orange-border);
+    box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.20),
+                0 4px 18px rgba(245, 158, 11, 0.09);
+}
+
+/* Interactive buttons */
+button:not(:disabled):hover,
+[role="button"]:hover {
+    border-color: var(--interactive-orange);
+}
+
+/* Keyboard accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[role="button"]:focus-visible {
+    outline: 2px solid var(--interactive-orange);
+    outline-offset: 2px;
+}
+
+/* Icon hover */
+button:not(:disabled):hover svg,
+a:hover svg {
+    transition: color 0.2s ease;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .card-premium,
+    .nav-btn,
+    button,
+    a,
+    [role="button"],
+    .stat-card,
+    .interactive-card {
+        transition: none !important;
+    }
+}

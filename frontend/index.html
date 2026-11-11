@@ -1,0 +1,2678 @@
+<!doctype html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KIPS College CSB-37 Fine Management Portal</title>
+
+    <!-- SVG Favicon Logo -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='%23f59e0b' d='M256 32L32 144l224 112 224-112L256 32z'/><path fill='%231e2530' d='M256 288L80 200v120c0 44.2 78.8 80 176 80s176-35.8 176-80V200L256 288z'/></svg>" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="js/tailwind-config.js"></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/portal-enhancements.css" />
+</head>
+
+<body
+    class="bg-[#fcfbf9] dark:bg-[#0f172a] text-[#1e2530] dark:text-[#f8fafc] font-sans min-h-screen flex flex-col antialiased selection:bg-amber-500 selection:text-white overflow-x-hidden transition-colors duration-200">
+    <!-- TOAST NOTIFICATIONS CONTAINER -->
+    <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col space-y-2 pointer-events-none"></div>
+
+    <!-- VIEW 0: WELCOME & SECURE LOGIN GATEWAY (STUDENT VERIFICATION + ADMIN GATEWAY) -->
+
+    <!-- VIEW 0: FUTURISTIC NEXUS LOGIN GATEWAY -->
+
+    <!-- VIEW 0: CSB-37 NEXUS RESPONSIVE FUTURISTIC LOGIN -->
+
+    <style>
+        #view-login .nexus-orbit {
+            animation: nexusOrbit 26s linear infinite;
+            transform-origin: center;
+        }
+
+        #view-login .nexus-scan {
+            animation: nexusScan 5s ease-in-out infinite;
+        }
+
+        #view-login .nexus-glow {
+            animation: nexusGlow 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes nexusOrbit {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes nexusScan {
+
+            0%,
+            100% {
+                transform: translateY(-55px);
+                opacity: 0;
+            }
+
+            30%,
+            70% {
+                opacity: 0.45;
+            }
+
+            50% {
+                transform: translateY(170px);
+            }
+        }
+
+        @keyframes nexusGlow {
+            from {
+                opacity: 0.35;
+            }
+
+            to {
+                opacity: 0.8;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            #view-login .nexus-orbit,
+            #view-login .nexus-scan,
+            #view-login .nexus-glow {
+                animation: none !important;
+            }
+        }
+    </style>
+
+    <!-- =====================================================
+     CSB-37 NEXUS | PREMIUM DARK FUTURISTIC LOGIN
+     Responsive: Mobile / Tablet / Laptop / Desktop
+===================================================== -->
+
+    <style>
+        #view-login {
+            color-scheme: dark;
+            isolation: isolate;
+        }
+
+        #view-login .nexus-orbit {
+            animation: nexusOrbit 28s linear infinite;
+            transform-origin: center;
+        }
+
+        #view-login .nexus-scan {
+            animation: nexusScan 5s ease-in-out infinite;
+        }
+
+        #view-login .nexus-glow {
+            animation: nexusGlow 4s ease-in-out infinite alternate;
+        }
+
+        #view-login .nexus-card {
+            background: linear-gradient(145deg,
+                    rgba(29, 41, 55, 0.98),
+                    rgba(19, 29, 41, 0.99) 55%,
+                    rgba(15, 23, 34, 0.99));
+        }
+
+        #view-login .nexus-input {
+            background: #101822 !important;
+            color: #f1f5f9 !important;
+            border: 1px solid #354252 !important;
+        }
+
+        #view-login .nexus-input::placeholder {
+            color: #8491a1 !important;
+        }
+
+        #view-login .nexus-input:focus {
+            border-color: #f59e0b !important;
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.12);
+        }
+
+        @keyframes nexusOrbit {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes nexusScan {
+
+            0%,
+            100% {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+
+            30%,
+            70% {
+                opacity: 0.45;
+            }
+
+            50% {
+                transform: translateY(180px);
+            }
+        }
+
+        @keyframes nexusGlow {
+            from {
+                opacity: 0.3;
+            }
+
+            to {
+                opacity: 0.85;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            #view-login .nexus-orbit,
+            #view-login .nexus-scan,
+            #view-login .nexus-glow {
+                animation: none !important;
+            }
+        }
+    </style>
+
+    <!-- VIEW 0: PREMIUM DARK NEXUS LOGIN -->
+
+    <div id="view-login"
+        class="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-[#0b1118] px-3 py-5 sm:px-5 sm:py-8 lg:px-8">
+        <!-- BACKGROUND LIGHTING -->
+        <div
+            class="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-amber-500/[0.09] blur-[120px]">
+        </div>
+
+        <div
+            class="pointer-events-none absolute -bottom-40 -right-32 h-[450px] w-[450px] rounded-full bg-amber-400/[0.06] blur-[130px]">
+        </div>
+
+        <div
+            class="pointer-events-none absolute right-[30%] top-[35%] h-64 w-64 rounded-full bg-emerald-500/[0.025] blur-[100px]">
+        </div>
+
+        <!-- DIGITAL BACKGROUND GRID -->
+        <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-[0.045]" style="
+          background-image:
+            linear-gradient(rgba(245, 158, 11, 0.7) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(245, 158, 11, 0.7) 1px, transparent 1px);
+          background-size: 44px 44px;
+        "></div>
+
+        <!-- MAIN LOGIN CARD -->
+        <main
+            class="nexus-card relative z-10 grid w-full max-w-5xl min-w-0 overflow-hidden rounded-2xl border border-amber-500/20 shadow-[0_30px_100px_rgba(0,0,0,.55)] sm:rounded-[28px] lg:grid-cols-[.92fr_1.08fr]">
+            <!-- TOP GOLD ACCENT -->
+            <div
+                class="absolute left-0 right-0 top-0 z-30 h-[2px] bg-gradient-to-r from-transparent via-amber-400 to-transparent">
+            </div>
+
+            <!-- =================================================
+             DESKTOP BRAND PANEL
+        ================================================== -->
+            <section
+                class="relative hidden min-w-0 flex-col justify-between overflow-hidden border-r border-white/[0.06] bg-gradient-to-br from-[#1b2633] via-[#131d28] to-[#0e1721] p-8 text-slate-100 sm:p-9 lg:flex xl:p-11">
+                <!-- Decorative Lighting -->
+                <div
+                    class="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full border border-amber-400/10">
+                </div>
+
+                <div
+                    class="pointer-events-none absolute -right-12 -top-12 h-56 w-56 rounded-full border border-amber-400/10">
+                </div>
+
+                <div
+                    class="pointer-events-none absolute bottom-20 left-0 h-56 w-56 rounded-full bg-amber-500/[0.06] blur-3xl">
+                </div>
+
+                <!-- BRAND HEADER -->
+                <div class="relative z-10 flex items-center gap-3">
+                    <div
+                        class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-amber-300/30 bg-gradient-to-br from-amber-400 to-amber-600 text-[#161c24] shadow-lg shadow-amber-500/20">
+                        <i class="fa-solid fa-graduation-cap text-2xl"></i>
+                    </div>
+
+                    <div class="min-w-0">
+                        <h2 class="truncate text-lg font-black tracking-wide text-slate-100">
+                            KIPS COLLEGE
+                        </h2>
+
+                        <p class="mt-0.5 text-[9px] font-extrabold tracking-[0.22em] text-amber-400">
+                            CSB-37 NEXUS PORTAL
+                        </p>
+                    </div>
+                </div>
+
+                <!-- DESKTOP INTRO -->
+                <div class="relative z-10 my-12">
+                    <p
+                        class="mb-4 flex items-center gap-2 text-[9px] font-black uppercase tracking-[0.28em] text-amber-400">
+                        <span class="h-px w-7 bg-amber-400"></span>
+
+                        DIGITAL CLASS GOVERNANCE
+                    </p>
+
+                    <h1 class="max-w-md text-4xl font-black leading-[1.12] tracking-tight text-slate-100 xl:text-5xl">
+                        One Portal.
+
+                        <span class="text-amber-400"> Complete </span>
+
+                        Control.
+                    </h1>
+
+                    <p class="mt-5 max-w-sm text-sm leading-7 text-slate-400">
+                        A centralized academic management environment for student records,
+                        fine management, attendance, leave applications and class
+                        administration.
+                    </p>
+
+                    <!-- FEATURE LIST -->
+                    <div class="mt-9 space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span
+                                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-amber-400/20 bg-amber-400/[0.08] text-amber-400">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </span>
+
+                            <div>
+                                <p class="text-xs font-extrabold text-slate-200">
+                                    Controlled Access
+                                </p>
+
+                                <p class="mt-0.5 text-[10px] text-slate-500">
+                                    Account-based authentication
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <span
+                                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-amber-400/20 bg-amber-400/[0.08] text-amber-400">
+                                <i class="fa-solid fa-database"></i>
+                            </span>
+
+                            <div>
+                                <p class="text-xs font-extrabold text-slate-200">
+                                    Centralized Records
+                                </p>
+
+                                <p class="mt-0.5 text-[10px] text-slate-500">
+                                    Organized academic information
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <span
+                                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-amber-400/20 bg-amber-400/[0.08] text-amber-400">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </span>
+
+                            <div>
+                                <p class="text-xs font-extrabold text-slate-200">
+                                    Activity Tracking
+                                </p>
+
+                                <p class="mt-0.5 text-[10px] text-slate-500">
+                                    Administrative audit history
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DESKTOP FOOTER -->
+                <div class="relative z-10 border-t border-white/10 pt-5">
+                    <p class="text-[9px] font-bold tracking-widest text-slate-500">
+                        KIPS COLLEGE · CLASS CSB-37
+                    </p>
+
+                    <p class="mt-1 text-[10px] font-bold text-amber-400">
+                        NEXUS MANAGEMENT SYSTEM
+                    </p>
+                </div>
+            </section>
+
+            <!-- =================================================
+             LOGIN PANEL
+        ================================================== -->
+            <section
+                class="flex min-w-0 flex-col justify-center bg-gradient-to-br from-[#1b2633] via-[#17212d] to-[#121b26] px-5 py-6 sm:px-9 sm:py-10 lg:px-10 xl:px-14">
+                <!-- MOBILE BRAND HEADER -->
+                <div class="mb-6 flex items-center justify-between gap-3 lg:hidden">
+                    <div class="flex min-w-0 items-center gap-3">
+                        <div
+                            class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-amber-300/30 bg-gradient-to-br from-amber-400 to-amber-600 text-[#161c24] shadow-lg shadow-amber-500/20">
+                            <i class="fa-solid fa-graduation-cap text-xl"></i>
+                        </div>
+
+                        <div class="min-w-0">
+                            <h1 class="truncate text-sm font-black tracking-wide text-slate-100">
+                                KIPS COLLEGE
+                            </h1>
+
+                            <p class="mt-0.5 text-[9px] font-black tracking-[0.18em] text-amber-400">
+                                CSB-37 NEXUS PORTAL
+                            </p>
+                        </div>
+                    </div>
+
+                    <span
+                        class="shrink-0 rounded-lg border border-amber-400/20 bg-amber-400/[0.08] px-2.5 py-1.5 text-[8px] font-black tracking-wider text-amber-400">
+                        NEXUS
+                    </span>
+                </div>
+
+                <!-- MOBILE FUTURISTIC HERO -->
+                <div
+                    class="relative mb-6 overflow-hidden rounded-2xl border border-amber-500/20 bg-gradient-to-br from-[#202c3a] via-[#151f2c] to-[#0d1722] p-5 shadow-xl shadow-black/20 sm:p-6 lg:hidden">
+                    <!-- Grid -->
+                    <div class="pointer-events-none absolute inset-0 opacity-[0.08]" style="
+                background-image:
+                  linear-gradient(rgba(245, 158, 11, 0.7) 1px, transparent 1px),
+                  linear-gradient(
+                    90deg,
+                    rgba(245, 158, 11, 0.7) 1px,
+                    transparent 1px
+                  );
+                background-size: 25px 25px;
+              "></div>
+
+                    <!-- Gold Light -->
+                    <div
+                        class="nexus-glow pointer-events-none absolute -right-12 -top-16 h-52 w-52 rounded-full bg-amber-400/15 blur-[65px]">
+                    </div>
+
+                    <!-- Orbit Artwork -->
+                    <div
+                        class="pointer-events-none absolute -right-7 top-2 flex h-44 w-44 items-center justify-center opacity-75 sm:right-0 sm:h-48 sm:w-48">
+                        <div class="absolute inset-4 rounded-full border border-amber-400/15"></div>
+
+                        <div class="absolute inset-9 rounded-full border border-amber-400/25"></div>
+
+                        <div class="nexus-orbit absolute inset-1 rounded-full border border-dashed border-amber-400/35">
+                        </div>
+
+                        <div class="nexus-orbit absolute inset-7 rounded-full border border-amber-300/25"
+                            style="animation-direction: reverse; animation-duration: 19s"></div>
+
+                        <div
+                            class="relative flex h-16 w-16 items-center justify-center rounded-2xl border border-amber-400/30 bg-[#17212d] text-amber-300 shadow-[0_0_40px_rgba(245,158,11,.16)]">
+                            <i class="fa-solid fa-graduation-cap text-3xl"></i>
+                        </div>
+
+                        <span
+                            class="absolute right-6 top-7 h-2 w-2 rounded-full bg-amber-400 shadow-[0_0_12px_rgba(245,158,11,.9)]"></span>
+
+                        <span class="absolute bottom-7 left-8 h-1.5 w-1.5 rounded-full bg-amber-300"></span>
+                    </div>
+
+                    <!-- Scan Line -->
+                    <div
+                        class="nexus-scan pointer-events-none absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-400/60 to-transparent">
+                    </div>
+
+                    <!-- Hero Content -->
+                    <div class="relative z-10 max-w-[82%]">
+                        <div
+                            class="mb-4 inline-flex items-center gap-2 rounded-full border border-amber-400/25 bg-amber-400/[0.08] px-2.5 py-1">
+                            <span class="h-1.5 w-1.5 rounded-full bg-amber-400"></span>
+
+                            <span class="text-[8px] font-black uppercase tracking-[0.17em] text-amber-300">
+                                Digital Governance
+                            </span>
+                        </div>
+
+                        <h2 class="text-[25px] font-black leading-[1.12] tracking-tight text-slate-100 sm:text-3xl">
+                            One Portal.
+
+                            <span class="block text-amber-400"> Complete Control. </span>
+                        </h2>
+
+                        <p class="mt-3 max-w-[240px] text-[10px] leading-5 text-slate-400 sm:text-xs">
+                            Your centralized academic management experience.
+                        </p>
+                    </div>
+
+                    <!-- HERO FOOTER -->
+                    <div class="relative z-10 mt-5 flex items-center gap-2 border-t border-white/[0.08] pt-3">
+                        <span class="text-[8px] font-black tracking-[0.13em] text-slate-400">
+                            KIPS COLLEGE
+                        </span>
+
+                        <span class="h-1 w-1 rounded-full bg-amber-500"></span>
+
+                        <span class="text-[8px] font-black tracking-[0.13em] text-amber-400">
+                            CSB-37 NEXUS
+                        </span>
+                    </div>
+                </div>
+
+                <!-- MOBILE FEATURE CARDS -->
+                <div class="mb-6 grid grid-cols-3 gap-2 lg:hidden">
+                    <div class="rounded-xl border border-amber-400/15 bg-[#1c2936] px-2 py-3 text-center">
+                        <i class="fa-solid fa-shield-halved text-sm text-amber-400"></i>
+
+                        <p class="mt-2 text-[8px] font-black uppercase tracking-wide text-slate-300">
+                            Secure Access
+                        </p>
+                    </div>
+
+                    <div class="rounded-xl border border-amber-400/15 bg-[#1c2936] px-2 py-3 text-center">
+                        <i class="fa-solid fa-database text-sm text-amber-400"></i>
+
+                        <p class="mt-2 text-[8px] font-black uppercase tracking-wide text-slate-300">
+                            Smart Records
+                        </p>
+                    </div>
+
+                    <div class="rounded-xl border border-amber-400/15 bg-[#1c2936] px-2 py-3 text-center">
+                        <i class="fa-solid fa-chart-line text-sm text-amber-400"></i>
+
+                        <p class="mt-2 text-[8px] font-black uppercase tracking-wide text-slate-300">
+                            Management
+                        </p>
+                    </div>
+                </div>
+
+                <!-- AUTHENTICATION STATUS -->
+                <div class="mb-5 flex items-center gap-2">
+                    <span
+                        class="h-2 w-2 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_9px_rgba(16,185,129,.55)]"></span>
+
+                    <span class="text-[9px] font-black uppercase tracking-[0.18em] text-emerald-400">
+                        Secure Portal Authentication
+                    </span>
+
+                    <span class="ml-auto hidden text-[9px] font-bold tracking-wider text-slate-500 sm:inline">
+                        CSB-37
+                    </span>
+                </div>
+
+                <!-- LOGIN HEADING -->
+                <header class="mb-6">
+                    <h2 class="text-[29px] font-black leading-tight tracking-tight text-slate-100 sm:text-3xl">
+                        Welcome Back.
+                    </h2>
+
+                    <p class="mt-2 text-xs leading-6 text-slate-400 sm:text-sm">
+                        Sign in with your registered portal credentials.
+                    </p>
+                </header>
+
+                <!-- EXISTING LOGIN HANDLER PRESERVED -->
+                <form onsubmit="handlePortalLogin(event)" class="w-full min-w-0 space-y-5">
+                    <!-- USERNAME -->
+                    <div class="min-w-0">
+                        <label for="loginUsername"
+                            class="mb-2 block text-[10px] font-black uppercase tracking-[0.14em] text-slate-300">
+                            Registered Username
+                        </label>
+
+                        <div class="relative">
+                            <i
+                                class="fa-solid fa-user pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-sm text-amber-400"></i>
+
+                            <input type="text" id="loginUsername" required autocomplete="username"
+                                placeholder="Enter your username"
+                                class="input-premium nexus-input block w-full min-w-0 rounded-xl py-3.5 pl-11 pr-4 text-sm shadow-inner transition duration-200 focus:outline-none" />
+                        </div>
+                    </div>
+
+                    <!-- PASSWORD -->
+                    <div class="min-w-0">
+                        <label for="loginIdentifier"
+                            class="mb-2 block text-[10px] font-black uppercase tracking-[0.14em] text-slate-300">
+                            Account Password
+                        </label>
+
+                        <div class="relative">
+                            <i
+                                class="fa-solid fa-lock pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-sm text-amber-400"></i>
+
+                            <input type="password" id="loginIdentifier" required autocomplete="current-password"
+                                placeholder="Enter your password"
+                                class="input-premium nexus-input block w-full min-w-0 rounded-xl py-3.5 pl-11 pr-4 text-sm shadow-inner transition duration-200 focus:outline-none" />
+                        </div>
+                    </div>
+
+                    <!-- TERMS ACCEPTANCE -->
+                    <div class="flex min-w-0 items-start gap-2 pt-1">
+                        <input type="checkbox" id="acceptTerms" required
+                            class="mt-0.5 h-4 w-4 shrink-0 cursor-pointer rounded border-slate-600 accent-amber-500" />
+
+                        <label for="acceptTerms" class="min-w-0 text-[11px] font-semibold leading-5 text-slate-400">
+                            I agree to the
+
+                            <button type="button" onclick="openTermsModal()"
+                                class="font-extrabold text-amber-400 underline decoration-amber-500/50 underline-offset-2 hover:text-amber-300">
+                                Terms, Privacy & Data Integrity Policy</button>.
+                        </label>
+                    </div>
+
+                    <!-- LOGIN BUTTON -->
+                    <button type="submit"
+                        class="group flex w-full items-center justify-center gap-3 rounded-xl border border-amber-300/20 bg-gradient-to-r from-amber-500 to-amber-600 px-4 py-3.5 text-[10px] font-black uppercase tracking-[0.14em] text-[#161c24] shadow-lg shadow-amber-600/20 transition duration-200 hover:-translate-y-0.5 hover:from-amber-400 hover:to-amber-500 hover:shadow-xl hover:shadow-amber-500/20 active:translate-y-0 active:scale-[0.99] sm:text-xs">
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        <span>Verify & Access Portal</span>
+
+                        <i
+                            class="fa-solid fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1"></i>
+                    </button>
+                </form>
+
+                <!-- SECURITY INFORMATION PANEL -->
+                <div class="mt-6 rounded-xl border border-amber-400/15 bg-[#101822] p-3.5 sm:mt-7 sm:p-4">
+                    <div class="flex min-w-0 items-center gap-3">
+                        <span
+                            class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-amber-400/20 bg-amber-400/[0.08] text-amber-400">
+                            <i class="fa-solid fa-shield-halved text-lg"></i>
+                        </span>
+
+                        <div class="min-w-0">
+                            <p class="text-[9px] font-black uppercase tracking-[0.12em] text-slate-200">
+                                Nexus Security Framework
+                            </p>
+
+                            <p class="mt-1 text-[9px] leading-4 text-slate-500 sm:text-[10px]">
+                                Identity verification · Access control · Audit history
+                            </p>
+                        </div>
+
+                        <i class="fa-solid fa-circle-check ml-auto shrink-0 text-sm text-emerald-400"></i>
+                    </div>
+                </div>
+
+                <!-- COPYRIGHT -->
+                <p class="mt-6 text-center text-[9px] font-semibold tracking-wide text-slate-500">
+                    © 2026 KIPS COLLEGE · CSB-37 NEXUS
+                </p>
+            </section>
+        </main>
+    </div>
+
+    <!-- MAIN APP WRAPPER (HIDDEN BEFORE LOGIN) -->
+
+    <!-- MAIN APP WRAPPER (HIDDEN BEFORE LOGIN) -->
+
+    <!-- MAIN APP WRAPPER (HIDDEN BEFORE LOGIN) -->
+    <div id="appContainer" class="hidden min-h-screen flex flex-col w-full">
+        <!-- MOBILE SIDEBAR BACKDROP -->
+        <div id="sidebarOverlay" onclick="closeSidebar()" aria-hidden="true"
+            class="fixed inset-0 z-40 hidden bg-slate-950/70 backdrop-blur-sm pointer-events-none lg:hidden"></div>
+
+        <!-- MAIN SIDEBAR -->
+
+        <aside id="sidebar"
+            class="fixed inset-y-0 left-0 z-50 w-64 max-w-[88vw] bg-gradient-to-b from-[#1a212c] via-[#161c24] to-[#12171e] border-r border-amber-500/20 text-white flex flex-col justify-between shadow-2xl shrink-0 h-screen overflow-y-auto overscroll-contain custom-scrollbar transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-out">
+            <div>
+                <!-- Sidebar Header -->
+                <div
+                    class="p-5 border-b border-[#2d3748]/60 flex items-center justify-between bg-[#161c24]/90 backdrop-blur-md">
+                    <div class="flex items-center space-x-3 min-w-0">
+                        <div
+                            class="bg-gradient-to-br from-amber-400 to-amber-600 p-2.5 rounded-xl text-slate-950 font-black shadow-lg shadow-amber-500/20 shrink-0">
+                            <i class="fa-solid fa-graduation-cap text-lg"></i>
+                        </div>
+                        <div class="truncate">
+                            <h1 class="text-base font-extrabold tracking-tight leading-tight text-white truncate">
+                                KIPS COLLEGE
+                            </h1>
+                            <p class="text-[10px] font-extrabold tracking-widest text-amber-400 uppercase truncate">
+                                CLASS CSB-37 PORTAL
+                            </p>
+                        </div>
+                    </div>
+                    <button onclick="toggleSidebar()" class="lg:hidden text-slate-400 hover:text-white text-lg p-1">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="p-3.5 space-y-2 text-sm font-semibold">
+                    <button onclick="switchView('dashboard')" id="nav-dashboard"
+                        class="nav-btn w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all text-slate-300 hover:bg-slate-800/60 hover:text-white border border-transparent">
+                        <i class="fa-solid fa-chart-pie w-5 text-center text-amber-400 shrink-0 text-base"></i>
+                        <span class="truncate tracking-wide font-bold">Dashboard</span>
+                    </button>
+                    <button onclick="switchView('fines')" id="nav-fines"
+                        class="nav-btn w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all text-slate-300 hover:bg-slate-800/60 hover:text-white border border-transparent">
+                        <i class="fa-solid fa-file-invoice-dollar w-5 text-center text-teal-400 shrink-0 text-base"></i>
+                        <span class="truncate tracking-wide font-bold">Fine Records</span>
+                    </button>
+                    <button onclick="switchView('students')" id="nav-students"
+                        class="nav-btn w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all text-slate-300 hover:bg-slate-800/60 hover:text-white border border-transparent">
+                        <i class="fa-solid fa-user-graduate w-5 text-center text-indigo-400 shrink-0 text-base"></i>
+                        <span class="truncate tracking-wide font-bold">Students Directory</span>
+                    </button>
+                    <button onclick="switchView('rules')" id="nav-rules"
+                        class="nav-btn w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all text-slate-300 hover:bg-slate-800/60 hover:text-white border border-transparent">
+                        <i class="fa-solid fa-book-bookmark w-5 text-center text-amber-400 shrink-0 text-base"></i>
+                        <span class="truncate tracking-wide font-bold">Rules & Policies</span>
+                    </button>
+                    <button onclick="switchView('analytics')" id="nav-analytics"
+                        class="nav-btn w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all text-slate-300 hover:bg-slate-800/60 hover:text-white border border-transparent">
+                        <i class="fa-solid fa-chart-column w-5 text-center text-violet-400 shrink-0 text-base"></i>
+                        <span class="truncate tracking-wide font-bold">Analytics & Charts</span>
+                    </button>
+                    <button onclick="switchView('appeals')" id="nav-appeals"
+                        class="nav-btn w-full flex items-center justify-between px-4 py-3 rounded-xl transition-all text-slate-300 hover:bg-slate-800/60 hover:text-white border border-transparent">
+                        <div class="flex items-center space-x-3 min-w-0">
+                            <i class="fa-solid fa-gavel w-5 text-center text-rose-400 shrink-0 text-base"></i>
+                            <span class="truncate tracking-wide font-bold">Dispute Appeals</span>
+                        </div>
+                        <span id="sidebarAppealsBadge"
+                            class="bg-rose-600 text-white text-[11px] font-black px-2 py-0.5 rounded-full shrink-0 shadow">0</span>
+                    </button>
+                    <button onclick="switchView('attendance')" id="nav-attendance"
+                        class="admin-only nav-btn w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all text-slate-300 hover:bg-slate-800/60 hover:text-white border border-transparent">
+                        <i class="fa-solid fa-calendar-days w-5 text-center text-cyan-400 shrink-0 text-base"></i>
+                        <span class="truncate tracking-wide font-bold">Attendance Register</span>
+                    </button>
+                    <button onclick="switchView('leaves')" id="nav-leaves"
+                        class="nav-btn w-full flex items-center justify-between px-4 py-3 rounded-xl transition-all text-slate-300 hover:bg-slate-800/60 hover:text-white border border-transparent">
+                        <span class="flex items-center space-x-3"><i
+                                class="fa-solid fa-calendar-check w-5 text-center text-emerald-400 shrink-0 text-base"></i><span
+                                class="truncate tracking-wide font-bold">Leave Applications</span></span>
+                        <span id="sidebarLeavesBadge"
+                            class="bg-amber-500 text-slate-950 text-[11px] font-black px-2 py-0.5 rounded-full shrink-0">0</span>
+                    </button>
+                    <button onclick="switchView('whatsapp')" id="nav-whatsapp"
+                        class="admin-only nav-btn w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all text-slate-300 hover:bg-slate-800/60 hover:text-white border border-transparent">
+                        <i class="fa-brands fa-whatsapp w-5 text-center text-emerald-400 shrink-0 text-base"></i><span
+                            class="truncate tracking-wide font-bold">WhatsApp Management</span>
+                    </button>
+                    <button onclick="switchView('updates')" id="nav-updates"
+                        class="nav-btn w-full flex items-center justify-between px-4 py-3 rounded-xl transition-all text-slate-300 hover:bg-slate-800/60 hover:text-white border border-transparent">
+                        <span class="flex items-center space-x-3"><i
+                                class="fa-solid fa-bullhorn w-5 text-center text-amber-400 shrink-0 text-base"></i><span
+                                class="truncate tracking-wide font-bold">New Updates</span></span>
+                        <span id="updatesUnreadBadge"
+                            class="hidden bg-rose-600 text-white text-[11px] font-black px-2 py-0.5 rounded-full shrink-0">0</span>
+                    </button>
+                    <button onclick="switchView('calculator')" id="nav-calculator"
+                        class="nav-btn w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all text-slate-300 hover:bg-slate-800/60 hover:text-white border border-transparent">
+                        <i class="fa-solid fa-calculator w-5 text-center text-emerald-400 shrink-0 text-base"></i>
+                        <span class="truncate tracking-wide font-bold">Fine Calculator</span>
+                    </button>
+                    <button onclick="switchView('fund')" id="nav-fund"
+                        class="nav-btn w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all text-slate-300 hover:bg-slate-800/60 hover:text-white border border-transparent">
+                        <i class="fa-solid fa-wallet w-5 text-center text-amber-400 shrink-0 text-base"></i>
+                        <span class="truncate tracking-wide font-bold">Class Fund & Expenses</span>
+                    </button>
+                    <button onclick="switchView('accesslogs')" id="nav-accesslogs"
+                        class="admin-only nav-btn w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all text-slate-300 hover:bg-slate-800/60 hover:text-white border border-transparent">
+                        <i class="fa-solid fa-shield-screen w-5 text-center text-cyan-400 shrink-0 text-base"></i>
+                        <span class="truncate tracking-wide font-bold">Access & Session Logs</span>
+                    </button>
+                    <button onclick="switchView('settings')" id="nav-settings"
+                        class="admin-only nav-btn w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all text-slate-300 hover:bg-slate-800/60 hover:text-white border border-transparent">
+                        <i class="fa-solid fa-gear w-5 text-center text-slate-400 shrink-0 text-base"></i>
+                        <span class="truncate tracking-wide font-bold">Settings & Backup</span>
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Sidebar Footer Actions -->
+            <div class="p-4 border-t border-[#2d3748]/60 space-y-3 bg-[#12171e]/90">
+                <button onclick="openAddFineModal()"
+                    class="admin-only w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black py-3 px-3 rounded-xl text-xs flex items-center justify-center space-x-2 shadow-lg shadow-amber-500/20 transition-all active:scale-95">
+                    <i class="fa-solid fa-plus-circle text-sm"></i>
+                    <span class="whitespace-nowrap uppercase tracking-wider">New Fine Entry</span>
+                </button>
+
+                <button onclick="handleLogout()"
+                    class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold py-2.5 px-3 rounded-xl text-xs flex items-center justify-center space-x-2 border border-slate-700 transition-all">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Log Out</span>
+                </button>
+                <p class="text-[10px] text-center text-slate-500 font-extrabold tracking-widest uppercase">
+                    KIPS CSB-37 Governance v4.8
+                </p>
+            </div>
+        </aside>
+
+        <!-- CONTENT WRAPPER -->
+        <div class="flex-grow flex flex-col min-w-0 w-full min-h-screen lg:pl-64">
+            <!-- TOP HEADER BAR -->
+            <header
+                class="bg-white dark:bg-[#1e293b] border-b border-[#e2dcd4] dark:border-[#334155] sticky top-0 z-30 px-4 sm:px-6 py-3.5 flex flex-wrap items-center justify-between gap-2 shadow-sm transition-colors duration-200">
+                <div class="flex items-center space-x-3 min-w-0">
+                    <button onclick="toggleSidebar()"
+                        class="lg:hidden p-2 rounded-xl bg-[#f7f5f0] dark:bg-[#0f172a] text-[#1e2530] dark:text-white hover:bg-[#e2dcd4] shrink-0 border border-[#e2dcd4] dark:border-[#334155]">
+                        <i class="fa-solid fa-bars text-base"></i>
+                    </button>
+                    <h2 id="pageTitle"
+                        class="text-lg sm:text-xl font-black text-[#1e2530] dark:text-white tracking-tight truncate">
+                        Dashboard Overview
+                    </h2>
+                </div>
+
+                <div class="flex items-center space-x-2 sm:space-x-3 shrink-0">
+                    <!-- TRUST BADGE IN HEADER -->
+                    <div
+                        class="hidden sm:flex items-center space-x-1.5 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 px-3 py-1.5 rounded-xl text-xs font-black">
+                        <i class="fa-solid fa-lock text-xs"></i>
+                        <span>Secure Server Session</span>
+                    </div>
+
+                    <div id="studentSelectorHeader"
+                        class="flex items-center space-x-1.5 bg-[#f7f5f0] dark:bg-[#0f172a] p-1.5 rounded-xl border border-[#e2dcd4] dark:border-[#334155]">
+                        <span
+                            class="text-xs font-semibold text-slate-600 dark:text-slate-300 hidden sm:inline ml-1">Student:</span>
+                        <select id="studentSelector" onchange="changeStudentProfile()"
+                            class="bg-white dark:bg-[#1e293b] text-xs font-bold text-[#1e2530] dark:text-white py-1 px-2.5 rounded-lg border border-[#e2dcd4] dark:border-[#334155] focus:outline-none max-w-[150px] sm:max-w-[210px] truncate shadow-sm">
+                            <option value="ALL" selected>ALL (Class Overview)</option>
+                        </select>
+                    </div>
+
+                    <button onclick="toggleTheme()"
+                        class="bg-[#f7f5f0] dark:bg-[#0f172a] hover:bg-[#e2dcd4] dark:hover:bg-slate-800 text-[#1e2530] dark:text-amber-400 font-bold p-2.5 rounded-xl flex items-center justify-center border border-[#e2dcd4] dark:border-[#334155] transition-all shrink-0 active:scale-95"
+                        title="Toggle Light/Dark Theme">
+                        <i id="themeToggleIcon" class="fa-solid fa-sun text-sm text-amber-400"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- MAIN VIEW CONTAINER -->
+            <main class="flex-grow p-4 sm:p-6 lg:p-8 space-y-6 w-full max-w-full overflow-x-hidden flex flex-col">
+                <!-- VIEW 1: DASHBOARD -->
+                <section id="view-dashboard" class="content-view space-y-6 w-full">
+                    <div class="glass-hero-card rounded-2xl p-6 sm:p-8 text-white relative">
+                        <div class="relative z-10 space-y-2">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span
+                                    class="bg-amber-400/20 text-amber-300 border border-amber-400/30 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider inline-flex items-center space-x-1.5">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                                    <span>Class CSB-37 Governance</span>
+                                </span>
+                                <span
+                                    class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider inline-flex items-center space-x-1.5">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                    <span>Server-Verified Role Access</span>
+                                </span>
+                            </div>
+                            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
+                                Discipline & Fine Overview
+                            </h2>
+                            <p class="text-slate-200 text-xs sm:text-sm max-w-xl font-medium leading-relaxed">
+                                Official portal for tracking fine collections, pending dues,
+                                dispute appeals, and class fund records with role-based access
+                                controls and server-side records.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- CURRENT CLASS SCHEDULE / ADMIN ACTIONS -->
+                    <div class="card-premium rounded-2xl p-5 space-y-3">
+                        <div class="flex flex-wrap items-center justify-between gap-3">
+                            <div class="min-w-0">
+                                <p class="text-[11px] font-black uppercase tracking-wider text-amber-600">
+                                    Current Class Schedule
+                                </p>
+                                <h3 id="currentScheduleInfo" class="text-sm font-black mt-1">
+                                    Schedule is not configured.
+                                </h3>
+                                <p class="text-xs text-slate-500 mt-1">
+                                    Test / Study / Normal week status and the effective dates
+                                    saved by the administrator.
+                                </p>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <button type="button"
+                                    class="admin-only bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs px-4 py-2.5 rounded-xl"
+                                    onclick="switchView('whatsapp')">
+                                    <i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp Alert
+                                </button>
+                                <button type="button"
+                                    class="admin-only bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs px-4 py-2.5 rounded-xl"
+                                    onclick="openAddFineModal()">
+                                    <i class="fa-solid fa-plus mr-1"></i> Issue New Fine
+                                </button>
+                            </div>
+                        </div>
+                        <form id="scheduleForm"
+                            class="admin-only grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2 border-t border-slate-200 dark:border-slate-700 pt-3"
+                            onsubmit="saveClassSchedule(event)">
+                            <select id="scheduleWeekType" class="input-premium px-3 py-2 rounded-lg text-xs">
+                                <option value="TEST">Test Week</option>
+                                <option value="STUDY">Study Week</option>
+                                <option value="NORMAL">Normal Week</option>
+                                <option value="OTHER">Other</option>
+                            </select>
+                            <input id="scheduleWeekNumber" type="number" min="1" max="5" placeholder="Week number"
+                                class="input-premium px-3 py-2 rounded-lg text-xs" />
+                            <input id="scheduleStartDate" type="date" required
+                                class="input-premium px-3 py-2 rounded-lg text-xs" />
+                            <input id="scheduleEndDate" type="date" required
+                                class="input-premium px-3 py-2 rounded-lg text-xs" />
+                            <button
+                                class="bg-slate-800 dark:bg-slate-700 text-white font-bold rounded-lg px-3 py-2 text-xs"
+                                type="submit">
+                                Save Current Schedule
+                            </button>
+                            <input id="scheduleDescription"
+                                class="input-premium sm:col-span-2 lg:col-span-5 px-3 py-2 rounded-lg text-xs"
+                                placeholder="Policy reminder / schedule description" />
+                        </form>
+                    </div>
+
+                    <!-- NOTICE BOARD -->
+                    <div class="card-premium rounded-2xl p-5 border-l-4 border-l-amber-500 space-y-2">
+                        <div class="flex items-center justify-between text-amber-600 font-black text-xs">
+                            <span class="flex items-center space-x-2"><i
+                                    class="fa-solid fa-bullhorn animate-bounce"></i><span>ANNOUNCEMENT</span></span>
+                            <span class="text-[10px] text-slate-400">CSB-37 Office</span>
+                        </div>
+                        <p id="announcementText"
+                            class="text-xs sm:text-sm font-bold text-[#1e2530] dark:text-slate-200">
+                            Saturday attendance is mandatory. Absence or leave on Saturday
+                            incurs a strict PKR 500 fine. Clear all pending dues within 3
+                            days.
+                        </p>
+                    </div>
+
+                    <!-- STATS GRID -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="card-premium rounded-xl p-5 border-l-4 border-l-blue-500">
+                            <div class="flex justify-between items-center text-slate-500">
+                                <span class="text-xs font-bold uppercase tracking-wider">Total Collected</span>
+                                <div
+                                    class="w-9 h-9 rounded-lg bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold border border-blue-200 dark:border-blue-800">
+                                    <i class="fa-solid fa-circle-check text-base"></i>
+                                </div>
+                            </div>
+                            <h3 id="statTotalCollected" class="text-2xl sm:text-3xl font-black mt-3">
+                                PKR 0
+                            </h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 font-medium">
+                                Cleared fines pool
+                            </p>
+                        </div>
+
+                        <div class="card-premium rounded-xl p-5 border-l-4 border-l-rose-500">
+                            <div class="flex justify-between items-center text-slate-500">
+                                <span
+                                    class="text-xs font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400">Total
+                                    Spent</span>
+                                <div
+                                    class="w-9 h-9 rounded-lg bg-rose-50 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400 flex items-center justify-center font-bold border border-rose-200 dark:border-rose-800">
+                                    <i class="fa-solid fa-receipt text-base"></i>
+                                </div>
+                            </div>
+                            <h3 id="statTotalSpent"
+                                class="text-2xl sm:text-3xl font-black text-rose-600 dark:text-rose-400 mt-3">
+                                PKR 0
+                            </h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1">
+                                Cultural/Events expense
+                            </p>
+                        </div>
+
+                        <div class="card-premium rounded-xl p-5 border-l-4 border-l-emerald-500">
+                            <div class="flex justify-between items-center text-slate-500">
+                                <span
+                                    class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Remaining
+                                    Fund</span>
+                                <div
+                                    class="w-9 h-9 rounded-lg bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold border border-emerald-200 dark:border-emerald-800">
+                                    <i class="fa-solid fa-wallet text-base"></i>
+                                </div>
+                            </div>
+                            <h3 id="statRemainingFund"
+                                class="text-2xl sm:text-3xl font-black text-emerald-600 dark:text-emerald-400 mt-3">
+                                PKR 0
+                            </h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1">
+                                Available balance
+                            </p>
+                        </div>
+
+                        <div class="card-premium rounded-xl p-5 border-l-4 border-l-amber-500">
+                            <div class="flex justify-between items-center text-slate-500">
+                                <span
+                                    class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Outstanding
+                                    Dues</span>
+                                <div
+                                    class="w-9 h-9 rounded-lg bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold border border-amber-200 dark:border-amber-800">
+                                    <i class="fa-solid fa-triangle-exclamation text-base"></i>
+                                </div>
+                            </div>
+                            <h3 id="statTotalPending"
+                                class="text-2xl sm:text-3xl font-black text-amber-600 dark:text-amber-400 mt-3">
+                                PKR 0
+                            </h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1">
+                                Pending payment
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- ADDITIONAL ADMIN GOVERNANCE METRICS (VALUES FROM DATABASE) -->
+                    <div class="admin-only admin-metric-card grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+                        id="adminDashboardActions">
+                        <div class="card-premium rounded-xl p-5 border-l-4 border-l-indigo-500">
+                            <div class="flex justify-between items-center text-slate-500">
+                                <span class="text-xs font-bold uppercase tracking-wider">Total Students</span><i
+                                    class="fa-solid fa-users text-indigo-500"></i>
+                            </div>
+                            <h3 id="adminMetricTotalStudents" class="text-2xl font-black mt-3">
+                                0
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Active registered students
+                            </p>
+                        </div>
+                        <div class="card-premium rounded-xl p-5 border-l-4 border-l-violet-500">
+                            <div class="flex justify-between items-center text-slate-500">
+                                <span class="text-xs font-bold uppercase tracking-wider">Fine Records</span><i
+                                    class="fa-solid fa-receipt text-violet-500"></i>
+                            </div>
+                            <h3 id="adminMetricFineRecords" class="text-2xl font-black mt-3">
+                                0
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-1">
+                                All recorded fine entries
+                            </p>
+                        </div>
+                        <div class="card-premium rounded-xl p-5 border-l-4 border-l-amber-500">
+                            <div class="flex justify-between items-center text-slate-500">
+                                <span class="text-xs font-bold uppercase tracking-wider">Total Assessed</span><i
+                                    class="fa-solid fa-coins text-amber-500"></i>
+                            </div>
+                            <h3 id="adminMetricAssessed" class="text-2xl font-black mt-3">
+                                PKR 0
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Total original fines raised
+                            </p>
+                        </div>
+                        <div class="card-premium rounded-xl p-5 border-l-4 border-l-emerald-500">
+                            <div class="flex justify-between items-center text-slate-500">
+                                <span class="text-xs font-bold uppercase tracking-wider">Collection Rate</span><i
+                                    class="fa-solid fa-percent text-emerald-500"></i>
+                            </div>
+                            <h3 id="adminMetricCollectionRate" class="text-2xl font-black mt-3">
+                                0.0%
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Paid divided by net assessed amount
+                            </p>
+                        </div>
+                        <div class="card-premium rounded-xl p-5 border-l-4 border-l-rose-500">
+                            <div class="flex justify-between items-center text-slate-500">
+                                <span class="text-xs font-bold uppercase tracking-wider">Pending Leaves</span><i
+                                    class="fa-solid fa-calendar-xmark text-rose-500"></i>
+                            </div>
+                            <h3 id="adminMetricPendingLeaves" class="text-2xl font-black mt-3">
+                                0
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Applications awaiting review
+                            </p>
+                        </div>
+                        <div class="card-premium rounded-xl p-5 border-l-4 border-l-cyan-500">
+                            <div class="flex justify-between items-center text-slate-500">
+                                <span class="text-xs font-bold uppercase tracking-wider">Net Class Fund</span><i
+                                    class="fa-solid fa-wallet text-cyan-500"></i>
+                            </div>
+                            <h3 id="adminMetricNetFund" class="text-2xl font-black mt-3">
+                                PKR 0
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Collections minus expenses (may be negative)
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- CLASS HONOR ROLL LEADERBOARD -->
+                    <div
+                        class="card-premium rounded-2xl p-5 border border-[#e2dcd4] dark:border-[#334155] shadow-sm space-y-3">
+                        <div
+                            class="flex items-center justify-between border-b border-[#e2dcd4] dark:border-[#334155] pb-3">
+                            <h3
+                                class="font-black text-base flex items-center space-x-2 text-emerald-600 dark:text-emerald-400">
+                                <i class="fa-solid fa-award text-lg"></i><span>Class Honor Roll (Zero Pending
+                                    Dues)</span>
+                            </h3>
+                            <span class="text-xs font-extrabold text-slate-400">CSB-37 Excellence</span>
+                        </div>
+                        <div id="honorRollContainer" class="flex flex-wrap gap-2 pt-1">
+                            <!-- Dynamic Honor Roll Badges -->
+                        </div>
+                    </div>
+
+                    <!-- RECENT LOGS -->
+                    <div
+                        class="card-premium rounded-xl border border-[#e2dcd4] dark:border-[#334155] shadow-sm p-5 space-y-4">
+                        <div
+                            class="flex justify-between items-center border-b border-[#e2dcd4] dark:border-[#334155] pb-3">
+                            <h3 class="font-black text-base">Recent Fine Logs</h3>
+                            <button onclick="switchView('fines')"
+                                class="text-xs font-bold text-amber-600 hover:text-amber-700 transition-all">
+                                View All &rarr;
+                            </button>
+                        </div>
+                        <div class="overflow-x-auto custom-scrollbar">
+                            <table class="w-full text-left border-collapse min-w-[600px]">
+                                <thead>
+                                    <tr
+                                        class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase border-b border-[#e2dcd4] dark:border-[#334155] pb-2">
+                                        <th class="py-2.5">Student</th>
+                                        <th class="py-2.5">Reason</th>
+                                        <th class="py-2.5">Amount</th>
+                                        <th class="py-2.5">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="dashboardRecentTable"
+                                    class="divide-y divide-[#e2dcd4] dark:divide-[#334155] text-sm font-semibold">
+                                    <!-- Dynamic -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- VIEW 2: FINE RECORDS -->
+                <section id="view-fines" class="content-view hidden space-y-6 w-full">
+                    <div
+                        class="card-premium rounded-2xl border-2 border-[#e2dcd4] dark:border-[#334155] shadow-xl p-5 sm:p-6 space-y-5 w-full">
+                        <div
+                            class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 border-b-2 border-[#e2dcd4] dark:border-[#334155] pb-4">
+                            <div>
+                                <h3 class="text-xl font-black">Fine Records Database</h3>
+                                <p class="text-xs font-bold text-slate-500 dark:text-slate-400">
+                                    Search, filter, update statuses, print receipts, or submit
+                                    dispute/leave appeals with proof.
+                                </p>
+                            </div>
+                            <div class="flex flex-wrap items-center gap-2">
+                                <button onclick="exportCSV()"
+                                    class="bg-[#f7f5f0] dark:bg-slate-800 hover:bg-[#e2dcd4] dark:hover:bg-slate-700 text-[#1e2530] dark:text-white text-xs font-black px-3.5 py-2.5 rounded-xl transition-all flex items-center border border-[#e2dcd4] dark:border-[#334155]">
+                                    <i class="fa-solid fa-file-csv text-emerald-600 mr-2 text-sm"></i>
+                                    Export CSV
+                                </button>
+                                <button onclick="openAddFineModal()"
+                                    class="admin-only bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-black px-4 py-2.5 rounded-xl shadow-lg transition-all flex items-center">
+                                    <i class="fa-solid fa-plus mr-1.5"></i> New Fine Entry
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full">
+                            <div class="relative">
+                                <i
+                                    class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400 text-sm"></i>
+                                <input type="text" id="searchInput" oninput="renderFinesTable()"
+                                    placeholder="Search student name, ID or reason..."
+                                    class="input-premium w-full pl-9 pr-3 py-2.5 rounded-xl text-xs sm:text-sm focus:outline-none" />
+                            </div>
+                            <div>
+                                <select id="statusFilter" onchange="renderFinesTable()"
+                                    class="input-premium w-full py-2.5 px-3 rounded-xl text-xs sm:text-sm focus:outline-none">
+                                    <option value="ALL">All Statuses</option>
+                                    <option value="Pending">Pending Only</option>
+                                    <option value="Partial">Partially Paid</option>
+                                    <option value="Overdue">Overdue</option>
+                                    <option value="Paid">Paid Only</option>
+                                    <option value="Waived">Waived</option>
+                                    <option value="Cancelled">Cancelled</option>
+                                </select>
+                            </div>
+                            <div>
+                                <select id="reasonFilter" onchange="renderFinesTable()"
+                                    class="input-premium w-full py-2.5 px-3 rounded-xl text-xs sm:text-sm focus:outline-none">
+                                    <option value="ALL">All Reasons</option>
+                                    <option value="Absent during Test">
+                                        Absent during Test (PKR 200)
+                                    </option>
+                                    <option value="Leave during Test">
+                                        Leave during Test (PKR 200)
+                                    </option>
+                                    <option value="Absent during Study Days">
+                                        Absent during Study Days (PKR 150)
+                                    </option>
+                                    <option value="Absent on Saturday">
+                                        Absent on Saturday (PKR 500)
+                                    </option>
+                                    <option value="Leave on Saturday">
+                                        Leave on Saturday (PKR 500)
+                                    </option>
+                                    <option value="Exceeded Study Days Leave">
+                                        Exceeded Study Days Leave
+                                    </option>
+                                    <option value="Late Arrival">Late Arrival</option>
+                                    <option value="Uniform Violation">Uniform Violation</option>
+                                    <option value="Mobile Usage">Mobile Usage</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="overflow-x-auto custom-scrollbar">
+                            <table class="w-full text-left border-collapse min-w-[700px]">
+                                <thead>
+                                    <tr
+                                        class="text-xs font-black text-slate-500 dark:text-slate-400 uppercase border-b-2 border-[#e2dcd4] dark:border-[#334155] pb-2">
+                                        <th class="py-2.5 px-4">Roll No</th>
+                                        <th class="py-2.5 px-4">Student Name</th>
+                                        <th class="py-2.5 px-4">Violation Reason</th>
+                                        <th class="py-2.5 px-4">Amount</th>
+                                        <th class="py-2.5 px-4">Date</th>
+                                        <th class="py-2.5 px-4">Status</th>
+                                        <th class="py-2.5 px-4 text-center">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="finesTableBody"
+                                    class="divide-y divide-[#e2dcd4] dark:divide-[#334155] text-xs sm:text-sm font-bold">
+                                    <!-- Dynamic rows -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- VIEW 3: STUDENTS DIRECTORY -->
+                <section id="view-students" class="content-view hidden space-y-6 w-full">
+                    <div
+                        class="card-premium rounded-2xl border-2 border-[#e2dcd4] dark:border-[#334155] shadow-xl p-5 sm:p-6 space-y-5 w-full">
+                        <div
+                            class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b-2 border-[#e2dcd4] dark:border-[#334155] pb-4">
+                            <div>
+                                <h3 class="text-xl font-black">Students Directory</h3>
+                                <p class="text-xs font-bold text-slate-500 dark:text-slate-400">
+                                    List of registered CSB-37 students and their fine status.
+                                </p>
+                            </div>
+                            <button onclick="openAddStudentModal()"
+                                class="admin-only bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs px-4 py-2.5 rounded-xl shadow-lg transition-all flex items-center space-x-2">
+                                <i class="fa-solid fa-user-plus"></i>
+                                <span>+ Add Student</span>
+                            </button>
+                        </div>
+
+                        <div id="studentsDirectoryGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <!-- Dynamic Student Cards -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- VIEW 4: RULES & POLICIES (COMPLETE) -->
+                <section id="view-rules" class="content-view hidden space-y-6 w-full">
+                    <div
+                        class="bg-gradient-to-r from-[#1e2530] via-[#161c24] to-[#1e2530] rounded-3xl p-6 sm:p-8 text-white shadow-2xl relative overflow-hidden border-2 border-amber-500/50">
+                        <div class="flex items-center space-x-3 mb-2 relative z-10">
+                            <i class="fa-solid fa-scale-balanced text-amber-400 text-2xl"></i>
+                            <h2 class="text-2xl sm:text-3xl font-black text-white">
+                                CSB-37 Rules & Leave Policy
+                            </h2>
+                        </div>
+                        <p class="text-slate-200 text-xs sm:text-sm max-w-2xl font-bold relative z-10">
+                            Official KIPS College disciplinary fine policy, attendance
+                            regulations, leave procedures, and clearance deadlines.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                        <div
+                            class="card-premium p-5 rounded-2xl border-2 border-rose-200 dark:border-rose-900 shadow-lg space-y-2">
+                            <div
+                                class="flex items-center justify-between text-rose-600 dark:text-rose-400 font-black text-xs">
+                                <span>TEST ATTENDANCE POLICY</span>
+                                <i class="fa-solid fa-file-pen text-base"></i>
+                            </div>
+                            <h4 class="font-black text-base">Absent / Leave During Test</h4>
+                            <div
+                                class="bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900 text-rose-700 dark:text-rose-300 text-xs font-black p-2.5 rounded-xl flex justify-between items-center">
+                                <span>Fine Amount:</span>
+                                <span class="text-sm font-black text-rose-600 dark:text-rose-400">PKR 200</span>
+                            </div>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 font-bold">
+                                Unexcused absence or submitting leave on a scheduled class
+                                test day incurs a mandatory PKR 200 fine.
+                            </p>
+                        </div>
+
+                        <div
+                            class="card-premium p-5 rounded-2xl border-2 border-amber-200 dark:border-amber-900 shadow-lg space-y-2">
+                            <div
+                                class="flex items-center justify-between text-amber-600 dark:text-amber-400 font-black text-xs">
+                                <span>STUDY DAYS POLICY</span>
+                                <i class="fa-solid fa-book-open text-base"></i>
+                            </div>
+                            <h4 class="font-black text-base">Absent During Study Days</h4>
+                            <div
+                                class="bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900 text-amber-700 dark:text-amber-300 text-xs font-black p-2.5 rounded-xl flex justify-between items-center">
+                                <span>Fine Amount:</span>
+                                <span class="text-sm font-black text-amber-600 dark:text-amber-400">PKR 150</span>
+                            </div>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 font-bold">
+                                Missing preparation days during study schedules results in a
+                                PKR 150 fine per missed day.
+                            </p>
+                        </div>
+
+                        <div
+                            class="card-premium p-5 rounded-2xl border-2 border-rose-200 dark:border-rose-900 shadow-lg space-y-2">
+                            <div
+                                class="flex items-center justify-between text-rose-600 dark:text-rose-400 font-black text-xs">
+                                <span>SATURDAY ATTENDANCE</span>
+                                <i class="fa-solid fa-calendar-xmark text-base"></i>
+                            </div>
+                            <h4 class="font-black text-base">Absent / Leave on Saturday</h4>
+                            <div
+                                class="bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900 text-rose-700 dark:text-rose-300 text-xs font-black p-2.5 rounded-xl flex justify-between items-center">
+                                <span>Strict Penalty:</span>
+                                <span class="text-sm font-black text-rose-600 dark:text-rose-400">PKR 500</span>
+                            </div>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 font-bold">
+                                Saturday classes are mandatory. Being absent or taking leave
+                                on Saturday carries a PKR 500 fine.
+                            </p>
+                        </div>
+
+                        <div
+                            class="card-premium p-5 rounded-2xl border-2 border-indigo-200 dark:border-indigo-900 shadow-lg space-y-2">
+                            <div
+                                class="flex items-center justify-between text-indigo-600 dark:text-indigo-400 font-black text-xs">
+                                <span>LEAVE LIMIT POLICY</span>
+                                <i class="fa-solid fa-user-clock text-base"></i>
+                            </div>
+                            <h4 class="font-black text-base">
+                                Monthly Study Days Leave Limit
+                            </h4>
+                            <div
+                                class="bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-900 text-indigo-700 dark:text-indigo-300 text-xs font-black p-2.5 rounded-xl flex justify-between items-center">
+                                <span>Max Allowed:</span>
+                                <span class="text-sm font-black text-indigo-600 dark:text-indigo-400">Only 2 Leaves /
+                                    Month</span>
+                            </div>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 font-bold">
+                                A maximum of only 2 leaves are permitted during study days per
+                                month across the session with prior approval (excluding test
+                                days).
+                            </p>
+                        </div>
+
+                        <div
+                            class="card-premium p-5 rounded-2xl border-2 border-purple-200 dark:border-purple-900 shadow-lg space-y-2">
+                            <div
+                                class="flex items-center justify-between text-purple-600 dark:text-purple-400 font-black text-xs">
+                                <span>MARRIAGE LEAVE</span>
+                                <i class="fa-solid fa-ring text-base"></i>
+                            </div>
+                            <h4 class="font-black text-base">Marriage Leave Guidelines</h4>
+                            <div
+                                class="bg-purple-50 dark:bg-purple-950/40 border border-purple-200 dark:border-purple-900 text-purple-700 dark:text-purple-300 text-xs font-black p-2.5 rounded-xl flex justify-between items-center">
+                                <span>Exemption:</span>
+                                <span class="text-sm font-black text-purple-600 dark:text-purple-400">Up to 3
+                                    Leaves</span>
+                            </div>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 font-bold">
+                                Marriage leave grants 3 allowed leaves (even on test or normal
+                                days) provided the wedding card and proof are submitted in
+                                advance.
+                            </p>
+                        </div>
+
+                        <div
+                            class="card-premium p-5 rounded-2xl border-2 border-emerald-200 dark:border-emerald-900 shadow-lg space-y-2">
+                            <div
+                                class="flex items-center justify-between text-emerald-600 dark:text-emerald-400 font-black text-xs">
+                                <span>CLEARANCE DEADLINE</span>
+                                <i class="fa-solid fa-circle-check text-base"></i>
+                            </div>
+                            <h4 class="font-black text-base">Dues Clearance Deadline</h4>
+                            <div
+                                class="bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-900 text-emerald-700 dark:text-emerald-300 text-xs font-black p-2.5 rounded-xl flex justify-between items-center">
+                                <span>Timeline:</span>
+                                <span class="text-sm font-black text-emerald-600 dark:text-emerald-400">Within 3
+                                    Days</span>
+                            </div>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 font-bold">
+                                All pending fines must be cleared within 3 days of issuance or
+                                reported through the Dispute Appeals tab.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- VIEW 5: ANALYTICS & CHARTS -->
+                <section id="view-analytics" class="content-view hidden space-y-6 w-full">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div class="card-premium p-5 rounded-2xl shadow-xl space-y-4">
+                            <h3 class="font-black text-base">
+                                Fine Amount Distribution by Reason (Bar Chart)
+                            </h3>
+                            <div class="h-64 relative flex items-center justify-center">
+                                <canvas id="reasonsBarChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="card-premium p-5 rounded-2xl shadow-xl space-y-4">
+                            <h3 class="font-black text-base">
+                                Collection Status Breakdown
+                            </h3>
+                            <div class="h-64 relative flex items-center justify-center">
+                                <canvas id="statusChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- VIEW 6: DISPUTE & LEAVE APPEALS -->
+                <section id="view-appeals" class="content-view hidden space-y-6 w-full">
+                    <div
+                        class="card-premium rounded-2xl border-2 border-[#e2dcd4] dark:border-[#334155] shadow-xl p-5 sm:p-6 space-y-5 w-full">
+                        <div
+                            class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b-2 border-[#e2dcd4] dark:border-[#334155] pb-4">
+                            <div>
+                                <h3 class="text-xl font-black">
+                                    Dispute & Emergency Leave Appeals Management
+                                </h3>
+                                <p class="text-xs font-bold text-slate-500 dark:text-slate-400">
+                                    Review student claims, medical reports, marriage cards with
+                                    image attachments, and decide whether to clear/forgive
+                                    fines.
+                                </p>
+                            </div>
+                        </div>
+                        <div id="appealsContainer" class="space-y-4">
+                            <!-- Dynamic Appeals List -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- VIEW 7: ACCESS & SESSION LOGS (ADMIN ONLY) -->
+                <section id="view-accesslogs" class="content-view hidden space-y-6 w-full">
+                    <div
+                        class="card-premium rounded-2xl border-2 border-cyan-500/30 shadow-xl p-5 sm:p-6 space-y-5 w-full">
+                        <div
+                            class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b-2 border-[#e2dcd4] dark:border-[#334155] pb-4">
+                            <div>
+                                <h3 class="text-xl font-black text-cyan-600 dark:text-cyan-400">
+                                    Access & Session Activity Monitor
+                                </h3>
+                                <p class="text-xs font-bold text-slate-500 dark:text-slate-400">
+                                    Real-time telemetry of user logins, device fingerprints,
+                                    access timestamps, and active session duration.
+                                </p>
+                            </div>
+                            <button onclick="clearAccessLogs()"
+                                class="bg-rose-600 hover:bg-rose-700 text-white font-black text-xs px-4 py-2 rounded-xl shadow">
+                                Clear Logs
+                            </button>
+                        </div>
+                        <div class="overflow-x-auto custom-scrollbar">
+                            <table class="w-full text-left border-collapse min-w-[700px]">
+                                <thead>
+                                    <tr
+                                        class="text-xs font-black text-slate-500 dark:text-slate-400 uppercase border-b-2 border-[#e2dcd4] dark:border-[#334155] pb-2">
+                                        <th class="py-2.5 px-4">User / Roll</th>
+                                        <th class="py-2.5 px-4">Access Timestamp</th>
+                                        <th class="py-2.5 px-4">Device & Browser Info</th>
+                                        <th class="py-2.5 px-4">Time Spent</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="accessLogsTableBody"
+                                    class="divide-y divide-[#e2dcd4] dark:divide-[#334155] text-xs sm:text-sm font-semibold">
+                                    <!-- Dynamic Access Logs -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- VIEW 8: SETTINGS & DATABASE BACKUP -->
+                <section id="view-settings" class="content-view hidden space-y-6 w-full">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div
+                            class="card-premium rounded-2xl border-2 border-[#e2dcd4] dark:border-[#334155] shadow-xl p-5 sm:p-6 space-y-5 w-full">
+                            <div>
+                                <h3 class="text-xl font-black">Database Backup & Export</h3>
+                                <p class="text-xs font-bold text-slate-500 dark:text-slate-400">
+                                    Export portal data backups safely in JSON format or export
+                                    CSV spreadsheet logs.
+                                </p>
+                            </div>
+                            <div class="flex flex-wrap gap-3 pt-3">
+                                <button onclick="exportDataJSON()"
+                                    class="bg-blue-600 hover:bg-blue-700 text-white font-black text-xs px-4 py-3 rounded-xl shadow transition-all flex items-center space-x-2">
+                                    <i class="fa-solid fa-download"></i>
+                                    <span>Export Backup JSON</span>
+                                </button>
+                                <button onclick="exportCSV()"
+                                    class="bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs px-4 py-3 rounded-xl shadow transition-all flex items-center space-x-2">
+                                    <i class="fa-solid fa-file-csv"></i>
+                                    <span>Export CSV Spreadsheets</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div
+                            class="card-premium rounded-2xl border-2 border-[#e2dcd4] dark:border-[#334155] shadow-xl p-5 sm:p-6 space-y-5 w-full">
+                            <div>
+                                <h3 class="text-xl font-black">
+                                    Administrative Tools & Security Shield
+                                </h3>
+                                <p class="text-xs font-bold text-slate-500 dark:text-slate-400">
+                                    Post announcements or clear pending dues in bulk. Firewall
+                                    active.
+                                </p>
+                            </div>
+                            <div class="space-y-3">
+                                <div>
+                                    <label
+                                        class="block text-xs font-black text-slate-600 dark:text-slate-300 uppercase mb-1">Update
+                                        Announcement</label>
+                                    <div class="flex gap-2">
+                                        <input type="text" id="newAnnouncementInput"
+                                            placeholder="Enter new announcement text..."
+                                            class="input-premium flex-grow p-2.5 rounded-xl text-xs focus:outline-none" />
+                                        <button onclick="updateAnnouncement()"
+                                            class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs px-4 py-2.5 rounded-xl shadow shrink-0">
+                                            Update
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="pt-2">
+                                    <button onclick="bulkClearFines()"
+                                        class="bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs px-4 py-2.5 rounded-xl shadow transition-all flex items-center space-x-2">
+                                        <i class="fa-solid fa-check-double"></i>
+                                        <span>Bulk Clear Current Pending Fines</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- VIEW 9: STUDENT FINE CALCULATOR TOOL (FIXED FULL RESPONSIVE CONTAINER) -->
+                <section id="view-calculator" class="content-view hidden flex-grow w-full flex flex-col">
+                    <div
+                        class="card-premium rounded-2xl border-2 border-[#e2dcd4] dark:border-[#334155] shadow-xl p-5 sm:p-8 space-y-6 w-full flex-grow flex flex-col justify-between">
+                        <div class="border-b border-[#e2dcd4] dark:border-[#334155] pb-4 flex items-center space-x-3">
+                            <div class="p-3 bg-emerald-500/10 text-emerald-500 rounded-xl text-xl">
+                                <i class="fa-solid fa-calculator"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black">
+                                    Student Absence Fine Estimator
+                                </h3>
+                                <p class="text-xs font-bold text-slate-500 dark:text-slate-400">
+                                    Estimate your fine amount based on planned leaves and
+                                    absences in upcoming days.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-grow items-stretch">
+                            <div class="space-y-4 flex flex-col justify-center">
+                                <div>
+                                    <label
+                                        class="block text-xs font-black uppercase text-slate-600 dark:text-slate-300 mb-1">Test
+                                        Day Absences / Leaves (PKR 200/day)</label>
+                                    <input type="number" id="calcTestDays" min="0" value="0"
+                                        oninput="calculateFineEstimate()"
+                                        class="input-premium w-full p-3 rounded-xl text-sm focus:outline-none" />
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-xs font-black uppercase text-slate-600 dark:text-slate-300 mb-1">Study
+                                        Day Absences (PKR 150/day)</label>
+                                    <input type="number" id="calcStudyDays" min="0" value="0"
+                                        oninput="calculateFineEstimate()"
+                                        class="input-premium w-full p-3 rounded-xl text-sm focus:outline-none" />
+                                    <span class="text-[11px] text-slate-400 mt-1 block">Note: Monthly limit is 2 study
+                                        day leaves (prior
+                                        approved).</span>
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-xs font-black uppercase text-slate-600 dark:text-slate-300 mb-1">Saturday
+                                        Absences / Leaves (PKR 500/day)</label>
+                                    <input type="number" id="calcSaturdays" min="0" value="0"
+                                        oninput="calculateFineEstimate()"
+                                        class="input-premium w-full p-3 rounded-xl text-sm focus:outline-none" />
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-xs font-black uppercase text-slate-600 dark:text-slate-300 mb-1">Late
+                                        Arrivals / Uniform Violations (PKR
+                                        100/incident)</label>
+                                    <input type="number" id="calcIncidents" min="0" value="0"
+                                        oninput="calculateFineEstimate()"
+                                        class="input-premium w-full p-3 rounded-xl text-sm focus:outline-none" />
+                                </div>
+                            </div>
+
+                            <div
+                                class="bg-gradient-to-br from-[#1e2530] to-[#161c24] text-white p-6 sm:p-8 rounded-2xl flex flex-col justify-between space-y-6 shadow-xl border border-amber-500/30">
+                                <div>
+                                    <span
+                                        class="text-[11px] font-extrabold tracking-wider text-amber-400 uppercase">Estimated
+                                        Fine Breakdown</span>
+                                    <div class="space-y-3 pt-4 text-xs sm:text-sm border-b border-slate-700 pb-4">
+                                        <div class="flex justify-between">
+                                            <span>Test Day Fine:</span><span id="calcBreakdownTest"
+                                                class="font-black text-amber-300">PKR 0</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Study Day Fine:</span><span id="calcBreakdownStudy"
+                                                class="font-black text-amber-300">PKR 0</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Saturday Penalty:</span><span id="calcBreakdownSaturday"
+                                                class="font-black text-amber-300">PKR 0</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Disciplinary Fine:</span><span id="calcBreakdownIncidents"
+                                                class="font-black text-amber-300">PKR 0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span
+                                        class="text-[11px] font-extrabold tracking-wider text-slate-400 uppercase">Total
+                                        Estimated Fine</span>
+                                    <h3 id="calcTotalEstimate"
+                                        class="text-3xl sm:text-4xl font-black mt-1 text-amber-400">
+                                        PKR 0
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- VIEW 10: CLASS FUND & EXPENSES LEDGER -->
+                <section id="view-fund" class="content-view hidden space-y-6 w-full">
+                    <div
+                        class="card-premium rounded-2xl border-2 border-[#e2dcd4] dark:border-[#334155] shadow-xl p-5 sm:p-6 space-y-6 w-full">
+                        <div
+                            class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b-2 border-[#e2dcd4] dark:border-[#334155] pb-4">
+                            <div>
+                                <h3 class="text-xl font-black">
+                                    Class Fund & Expense Ledger
+                                </h3>
+                                <p class="text-xs font-bold text-slate-500 dark:text-slate-400">
+                                    Transparent record of collected fine pool and expenses for
+                                    Cultural Days, Teachers' Day, sweets, and refreshments.
+                                </p>
+                            </div>
+                            <button onclick="openAddExpenseModal()"
+                                class="admin-only bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs px-4 py-2.5 rounded-xl shadow-lg transition-all flex items-center space-x-2">
+                                <i class="fa-solid fa-plus-circle"></i>
+                                <span>+ Add Class Expense</span>
+                            </button>
+                        </div>
+
+                        <!-- Fund Summary Banner -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div
+                                class="bg-emerald-50 dark:bg-emerald-950/40 p-4 rounded-2xl border border-emerald-200 dark:border-emerald-800">
+                                <span class="text-xs font-black uppercase text-emerald-700 dark:text-emerald-300">Total
+                                    Collected Fines</span>
+                                <div id="fundTotalCollected"
+                                    class="text-2xl font-black text-emerald-600 dark:text-emerald-400 mt-1">
+                                    PKR 0
+                                </div>
+                            </div>
+                            <div
+                                class="bg-rose-50 dark:bg-rose-950/40 p-4 rounded-2xl border border-rose-200 dark:border-rose-800">
+                                <span class="text-xs font-black uppercase text-rose-700 dark:text-rose-300">Total Spent
+                                    (Events/Sweets)</span>
+                                <div id="fundTotalSpent"
+                                    class="text-2xl font-black text-rose-600 dark:text-rose-400 mt-1">
+                                    PKR 0
+                                </div>
+                            </div>
+                            <div
+                                class="bg-blue-50 dark:bg-blue-950/40 p-4 rounded-2xl border border-blue-200 dark:border-blue-800">
+                                <span class="text-xs font-black uppercase text-blue-700 dark:text-blue-300">Current
+                                    Balance in Fund</span>
+                                <div id="fundCurrentBalance"
+                                    class="text-2xl font-black text-blue-600 dark:text-blue-400 mt-1">
+                                    PKR 0
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="overflow-x-auto custom-scrollbar pt-2">
+                            <table class="w-full text-left border-collapse min-w-[650px]">
+                                <thead>
+                                    <tr
+                                        class="text-xs font-black text-slate-500 dark:text-slate-400 uppercase border-b-2 border-[#e2dcd4] dark:border-[#334155] pb-2">
+                                        <th class="py-2.5 px-4">Date</th>
+                                        <th class="py-2.5 px-4">Expense Description / Comment</th>
+                                        <th class="py-2.5 px-4">Event / Category</th>
+                                        <th class="py-2.5 px-4">Amount Spent</th>
+                                        <th class="py-2.5 px-4 text-center">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="expensesTableBody"
+                                    class="divide-y divide-[#e2dcd4] dark:divide-[#334155] text-xs sm:text-sm font-bold">
+                                    <!-- Dynamic Expenses -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- NEW VIEW: LEAVE APPLICATIONS -->
+                <section id="view-leaves" class="content-view hidden space-y-6 w-full">
+                    <div class="card-premium rounded-2xl p-5 sm:p-6 space-y-4" id="studentLeavePanel">
+                        <div>
+                            <h3 class="text-xl font-black">Apply for Leave</h3>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Your student identity is taken from your authenticated
+                                account. A supporting PDF/JPG/PNG document is mandatory.
+                            </p>
+                        </div>
+                        <form id="leaveApplicationForm" onsubmit="submitLeaveApplication(event)"
+                            class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <label class="text-xs font-bold grid gap-2">Leave Type<select id="leaveType" required
+                                    class="input-premium rounded-xl px-3 py-2.5">
+                                    <option value="EMERGENCY">Emergency</option>
+                                    <option value="MARRIAGE">Marriage</option>
+                                    <option value="MEDICAL">Medical</option>
+                                    <option value="OTHER">Other</option>
+                                </select></label>
+                            <label class="text-xs font-bold grid gap-2">Supporting Proof (Required)<input
+                                    id="leaveProof" type="file" accept="application/pdf,image/jpeg,image/png" required
+                                    class="input-premium rounded-xl px-3 py-2 text-xs" /></label>
+                            <label class="text-xs font-bold grid gap-2">Start Date<input id="leaveStartDate" type="date"
+                                    required class="input-premium rounded-xl px-3 py-2.5" /></label>
+                            <label class="text-xs font-bold grid gap-2">End Date<input id="leaveEndDate" type="date"
+                                    required class="input-premium rounded-xl px-3 py-2.5" /></label>
+                            <label class="text-xs font-bold grid gap-2 sm:col-span-2">Description / Reason<textarea
+                                    id="leaveDescription" rows="3" required maxlength="3000"
+                                    class="input-premium rounded-xl px-3 py-2.5"
+                                    placeholder="Explain the reason and requested leave duration"></textarea>
+                            </label>
+                            <div class="sm:col-span-2 flex justify-end">
+                                <button type="submit"
+                                    class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-black px-5 py-2.5 rounded-xl text-xs">
+                                    Submit Leave Application
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-premium rounded-2xl p-5 space-y-4" id="adminLeavePanel">
+                        <div>
+                            <h3 class="text-xl font-black">Leave Applications Review</h3>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Approve or reject each request. Approval records attendance as
+                                leave; it does not automatically waive fines.
+                            </p>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full min-w-[850px] text-xs text-left">
+                                <thead>
+                                    <tr
+                                        class="border-b border-slate-200 dark:border-slate-700 text-slate-500 uppercase">
+                                        <th class="p-3">Student</th>
+                                        <th class="p-3">Type</th>
+                                        <th class="p-3">Dates</th>
+                                        <th class="p-3">Reason</th>
+                                        <th class="p-3">Status</th>
+                                        <th class="p-3">Proof</th>
+                                        <th class="p-3">Decision</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="leaveApplicationsBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ADMIN VIEW: DAILY ATTENDANCE REGISTER -->
+                <section id="view-attendance" class="content-view hidden space-y-6 w-full">
+                    <div class="card-premium rounded-2xl p-5 sm:p-6 space-y-4">
+                        <div class="flex flex-wrap items-end justify-between gap-3">
+                            <div>
+                                <h3 class="text-xl font-black">Daily Attendance Register</h3>
+                                <p class="text-xs text-slate-500 mt-1">
+                                    Mark present, absent or leave for the selected date. The
+                                    server applies the saved schedule and configured fine
+                                    policy.
+                                </p>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <label class="text-xs font-bold grid gap-1">Attendance date<input
+                                        id="attendanceDateInput" type="date"
+                                        class="input-premium rounded-xl px-3 py-2.5" /></label><button type="button"
+                                    onclick="loadAttendanceRegister()"
+                                    class="bg-slate-800 dark:bg-slate-700 text-white rounded-xl px-4 py-2.5 text-xs font-black self-end">
+                                    Load Date
+                                </button>
+                            </div>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full min-w-[850px] text-xs text-left">
+                                <thead>
+                                    <tr
+                                        class="border-b border-slate-200 dark:border-slate-700 text-slate-500 uppercase">
+                                        <th class="p-3">Student</th>
+                                        <th class="p-3">Roll Number</th>
+                                        <th class="p-3">Attendance Status</th>
+                                        <th class="p-3">Note</th>
+                                        <th class="p-3">Existing Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="attendanceRegisterBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="flex flex-wrap items-center justify-between gap-3">
+                            <p class="text-xs text-slate-500">
+                                Unmarked rows are ignored. Existing financial records are
+                                never silently deleted if attendance is later corrected.
+                            </p>
+                            <button type="button" onclick="saveAttendanceRegister()"
+                                class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-black px-5 py-2.5 rounded-xl text-xs">
+                                Save Attendance
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- NEW VIEW: WHATSAPP MANAGEMENT -->
+                <section id="view-whatsapp" class="content-view hidden space-y-6 w-full">
+                    <div class="card-premium rounded-2xl p-5 sm:p-6 space-y-4">
+                        <div>
+                            <h3 class="text-xl font-black">WhatsApp Management</h3>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Students with an outstanding balance. Preview the complete
+                                statement before opening WhatsApp Web; message sending remains
+                                manual.
+                            </p>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full min-w-[900px] text-xs text-left">
+                                <thead>
+                                    <tr
+                                        class="border-b border-slate-200 dark:border-slate-700 text-slate-500 uppercase">
+                                        <th class="p-3">Student</th>
+                                        <th class="p-3">Class</th>
+                                        <th class="p-3">WhatsApp</th>
+                                        <th class="p-3">Total Fine</th>
+                                        <th class="p-3">Paid</th>
+                                        <th class="p-3">Outstanding</th>
+                                        <th class="p-3">Payment Status</th>
+                                        <th class="p-3">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="whatsappManagementBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- NEW VIEW: UPDATES & ANNOUNCEMENTS -->
+                <section id="view-updates" class="content-view hidden space-y-6 w-full">
+                    <div id="adminNoticePanel" class="card-premium rounded-2xl p-5 sm:p-6 space-y-4">
+                        <div>
+                            <h3 class="text-xl font-black">Publish New Update</h3>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Draft, publish and expire student notices. Attachments are
+                                stored privately.
+                            </p>
+                        </div>
+                        <form id="noticeForm" onsubmit="createAnnouncement(event)"
+                            class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <input id="noticeTitle" required maxlength="180" placeholder="Notice title"
+                                class="input-premium rounded-xl px-3 py-2.5 text-xs" />
+                            <select id="noticeCategory" class="input-premium rounded-xl px-3 py-2.5 text-xs">
+                                <option value="GENERAL">General</option>
+                                <option value="HOLIDAY">Holiday</option>
+                                <option value="EID_HOLIDAY">Eid Holiday</option>
+                                <option value="ACADEMIC">Academic</option>
+                                <option value="TEST">Test</option>
+                                <option value="EVENT">Event</option>
+                                <option value="EMERGENCY">Emergency</option>
+                                <option value="OFFER">Offer</option>
+                                <option value="OTHER">Other</option>
+                            </select>
+                            <input id="noticeShortDescription" maxlength="500" placeholder="Short description"
+                                class="input-premium rounded-xl px-3 py-2.5 text-xs sm:col-span-2" />
+                            <textarea id="noticeBody" required rows="4" placeholder="Full announcement details"
+                                class="input-premium rounded-xl px-3 py-2.5 text-xs sm:col-span-2"></textarea>
+                            <label class="grid gap-1 text-xs font-bold">Event date<input id="noticeEventDate"
+                                    type="date" class="input-premium rounded-xl px-3 py-2.5" /></label>
+                            <label class="grid gap-1 text-xs font-bold">Attachment (Optional)<input
+                                    id="noticeAttachment" type="file" accept="application/pdf,image/jpeg,image/png"
+                                    class="input-premium rounded-xl px-3 py-2 text-xs" /></label>
+                            <label class="grid gap-1 text-xs font-bold">Start time<input id="noticeStartTime"
+                                    type="time" class="input-premium rounded-xl px-3 py-2.5" /></label>
+                            <label class="grid gap-1 text-xs font-bold">End time<input id="noticeEndTime" type="time"
+                                    class="input-premium rounded-xl px-3 py-2.5" /></label>
+                            <textarea id="noticeInstructions" rows="2" placeholder="Instructions (optional)"
+                                class="input-premium rounded-xl px-3 py-2.5 text-xs sm:col-span-2"></textarea>
+                            <label class="grid gap-1 text-xs font-bold">Publish date/time<input id="noticePublishAt"
+                                    type="datetime-local" class="input-premium rounded-xl px-3 py-2.5" /></label>
+                            <label class="grid gap-1 text-xs font-bold">Expiry date/time<input id="noticeExpiresAt"
+                                    type="datetime-local" class="input-premium rounded-xl px-3 py-2.5" /></label>
+                            <label class="grid gap-1 text-xs font-bold">Initial status<select id="noticeStatus"
+                                    class="input-premium rounded-xl px-3 py-2.5">
+                                    <option value="DRAFT">Draft</option>
+                                    <option value="PUBLISHED">Publish</option>
+                                    <option value="UNPUBLISHED">Unpublished</option>
+                                </select></label>
+                            <div class="flex items-end justify-end gap-2">
+                                <button type="button" id="cancelNoticeEdit" onclick="cancelAnnouncementEdit()"
+                                    class="hidden bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-white font-bold px-4 py-2.5 rounded-xl text-xs">
+                                    Cancel Edit</button><button type="submit"
+                                    class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-black px-5 py-2.5 rounded-xl text-xs">
+                                    Save Update
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="text-xl font-black">New Updates</h3>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Published notices and previously saved announcements.
+                            </p>
+                        </div>
+                        <div id="announcementsList" class="grid grid-cols-1 lg:grid-cols-2 gap-4"></div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- WEBSITE FOOTER -->
+            <footer
+                class="bg-white dark:bg-[#1e293b] border-t border-[#e2dcd4] dark:border-[#334155] mt-auto p-6 transition-colors duration-200">
+                <div
+                    class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-bold text-slate-500 dark:text-slate-400">
+                    <div class="flex items-center space-x-2">
+                        <div class="p-1.5 bg-amber-500 text-slate-950 rounded-lg text-xs font-black">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <span class="text-slate-800 dark:text-slate-200 font-extrabold">KIPS College CSB-37 Fine
+                            Portal</span>
+                        <span
+                            class="bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded text-[10px] font-black border border-emerald-500/20"><i
+                                class="fa-solid fa-lock"></i> Secure Access</span>
+                    </div>
+                    <div class="flex items-center space-x-6 text-slate-600 dark:text-slate-300">
+                        <button onclick="switchView('rules')" class="hover:text-amber-500 transition-colors">
+                            Rules & Policy
+                        </button>
+                        <button onclick="openTermsModal()" class="hover:text-amber-500 transition-colors">
+                            Terms and Conditions
+                        </button>
+                        <button onclick="switchView('fund')" class="hover:text-amber-500 transition-colors">
+                            Class Fund Ledger
+                        </button>
+                    </div>
+                    <div class="text-center sm:text-right space-y-0.5">
+                        <p class="text-[11px] text-slate-400">
+                            Copyright &copy; 2026 All rights reserved.
+                        </p>
+                        <!-- <p class="text-[11px] font-black text-amber-600 dark:text-amber-400">
+                            Made by Hafiz Muhammad Haseeb
+                        </p> -->
+
+                        <p class="text-[11px] font-black text-amber-600 dark:text-amber-400">
+                            Developed &amp; Engineered By
+                        </p>
+
+                        <p class="text-sm font-black text-slate-800 dark:text-white mt-1">
+                            Hafiz Muhammad Haseeb &amp; Muhammad Arslan Farooq
+                        </p>
+
+                        <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-1">
+                            Collaborative Development Team
+                        </p>
+
+
+
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- FLOATING AI ROBOT SUPPORT WIDGET (ALIBABA/DARAZ STYLE) -->
+    <div id="aiSupportWidget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+        <!-- Chat Box Window (Hidden by default) -->
+        <div id="aiChatWindow"
+            class="hidden w-[90vw] sm:w-96 bg-white dark:bg-[#1e293b] rounded-3xl shadow-2xl border border-amber-500/40 overflow-hidden mb-4 flex flex-col h-[480px] sm:h-[500px] transition-all animate-in fade-in zoom-in duration-200">
+            <div
+                class="bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 text-slate-950 p-4 flex items-center justify-between font-black shrink-0">
+                <div class="flex items-center space-x-3">
+                    <div
+                        class="w-9 h-9 rounded-2xl bg-slate-950 text-amber-400 flex items-center justify-center text-base shadow-lg border border-amber-400/40 shrink-0">
+                        <i class="fa-solid fa-brain text-amber-400 animate-pulse"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-black text-slate-950 tracking-wide flex items-center gap-1.5">
+                            CSB-37 AI Assistant
+                            <span
+                                class="bg-slate-950 text-amber-400 text-[9px] px-1.5 py-0.5 rounded-md uppercase font-extrabold">v2.0</span>
+                        </h4>
+                        <p class="text-[10px] font-extrabold text-slate-900 opacity-90">
+                            Online | Secure Portal Session
+                        </p>
+                    </div>
+                </div>
+                <button onclick="toggleAIChat()" class="text-slate-950 hover:bg-black/10 p-1.5 rounded-lg">
+                    <i class="fa-solid fa-xmark text-base"></i>
+                </button>
+            </div>
+
+            <div id="aiChatMessages"
+                class="flex-grow p-4 overflow-y-auto custom-scrollbar space-y-3 text-xs bg-slate-50 dark:bg-[#0f172a]">
+                <div class="flex items-start space-x-2">
+                    <div
+                        class="w-7 h-7 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 text-slate-950 flex items-center justify-center font-black shrink-0 text-xs shadow-md">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-[#1e293b] p-3 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-semibold space-y-1">
+                        <p>
+                            Assalam-o-Alaikum! Welcome to KIPS College CSB-37 Nexus Portal.
+                            I am your automated AI Assistant. I can help you with fine
+                            records, policies, fund balances and dispute appeals. This
+                            platform is developed by a collaborative team: Hafiz Muhammad
+                            Haseeb and Muhammad Arslan Farooq.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Predefined Quick Questions Bar -->
+            <div
+                class="p-2.5 bg-white dark:bg-[#1e293b] border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-1.5 shrink-0">
+                <button onclick="sendQuickPrompt('What is the fine for test absence?')"
+                    class="text-[10px] bg-amber-500/10 text-amber-600 dark:text-amber-400 font-bold px-2 py-1 rounded-lg hover:bg-amber-500/20 border border-amber-500/30">
+                    Test Fine? (PKR 200)
+                </button>
+                <button onclick="sendQuickPrompt('How do I submit dispute appeal?')"
+                    class="text-[10px] bg-amber-500/10 text-amber-600 dark:text-amber-400 font-bold px-2 py-1 rounded-lg hover:bg-amber-500/20 border border-amber-500/30">
+                    Dispute Appeal
+                </button>
+
+                <!-- <button
+            onclick="sendQuickPrompt('Who is the founder of this website?')"
+            class="text-[10px] bg-amber-500/10 text-amber-600 dark:text-amber-400 font-bold px-2 py-1 rounded-lg hover:bg-amber-500/20 border border-amber-500/30"
+          >
+            Website Founder
+          </button> -->
+
+
+                <button onclick="sendQuickPrompt('Who developed the CSB-37 Nexus Portal?')"
+                    class="text-[10px] bg-amber-500/10 text-amber-600 dark:text-amber-400 font-bold px-2 py-1 rounded-lg hover:bg-amber-500/20 border border-amber-500/30">
+                    Development Team
+                </button>
+
+                <button onclick="sendQuickPrompt('Tell me about Muhammad Arslan Farooq and his technical expertise.')"
+                    class="text-[10px] bg-amber-500/10 text-amber-600 dark:text-amber-400 font-bold px-2 py-1 rounded-lg hover:bg-amber-500/20 border border-amber-500/30">
+                    Full-Stack Developer
+                </button>
+
+            </div>
+
+            <div
+                class="p-3 bg-white dark:bg-[#1e293b] border-t border-slate-200 dark:border-slate-700 flex items-center space-x-2 shrink-0">
+                <input type="text" id="aiUserInput" onkeypress="handleAIKeypress(event)"
+                    placeholder="Ask any question about fines or policies..."
+                    class="input-premium flex-grow py-2 px-3 rounded-xl text-xs focus:outline-none" />
+                <button onclick="sendAIMessage()"
+                    class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-black p-2.5 rounded-xl text-xs shadow">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Floating Futuristic AI Toggle Button -->
+        <button onclick="toggleAIChat()"
+            class="bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-300 hover:to-amber-500 text-slate-950 p-3.5 sm:p-4 rounded-2xl shadow-2xl flex items-center justify-center font-black text-xl border-2 border-white dark:border-slate-800 transition-all active:scale-95 group relative ring-4 ring-amber-500/20">
+            <div class="relative flex items-center justify-center">
+                <i class="fa-solid fa-microchip text-2xl group-hover:rotate-12 transition-transform"></i>
+            </div>
+            <span class="absolute -top-1 -right-1 flex h-3.5 w-3.5">
+                <span
+                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span
+                    class="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500 border-2 border-slate-900"></span>
+            </span>
+        </button>
+    </div>
+
+    <!-- MODAL: TERMS AND CONDITIONS -->
+    <!-- MODAL: TERMS AND CONDITIONS (WITH ROBUST DATA INTEGRITY & PRIVACY) -->
+
+    <!-- MODAL: NEXUS TERMS, PRIVACY & DATA INTEGRITY -->
+    <div id="termsModal"
+        class="fixed inset-0 bg-[#0b1018]/85 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <div
+            class="relative bg-[#fcfbf9] dark:bg-[#1e2530] rounded-2xl shadow-2xl border border-amber-500/30 w-full max-w-2xl max-h-[88vh] overflow-hidden flex flex-col">
+            <!-- Header -->
+            <div class="p-5 sm:p-6 bg-gradient-to-r from-[#1e2530] to-[#161c24] border-b border-amber-500/20">
+                <div class="flex items-center justify-between gap-3">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-11 h-11 rounded-xl bg-amber-500/15 border border-amber-500/20 flex items-center justify-center text-amber-400">
+                            <i class="fa-solid fa-file-shield text-xl"></i>
+                        </div>
+
+                        <div>
+                            <h3 class="font-black text-white text-base">
+                                Terms & Conditions
+                            </h3>
+                            <p class="text-[10px] text-amber-400 font-bold tracking-widest mt-1">
+                                PRIVACY · SECURITY · DATA INTEGRITY
+                            </p>
+                        </div>
+                    </div>
+
+                    <button type="button" onclick="closeTermsModal()"
+                        class="text-slate-400 hover:text-amber-400 transition-colors">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div
+                class="p-5 sm:p-6 overflow-y-auto custom-scrollbar space-y-5 text-xs font-medium leading-6 text-slate-600 dark:text-slate-300">
+                <!-- Security Statement -->
+                <div class="rounded-xl p-4 bg-[#f7f5f0] dark:bg-[#161c24] border border-amber-500/25">
+                    <div class="flex items-center gap-2 mb-2">
+                        <i class="fa-solid fa-shield-halved text-amber-500"></i>
+                        <h4 class="font-black text-[#1e2530] dark:text-white">
+                            NEXUS DATA PROTECTION PRINCIPLE
+                        </h4>
+                    </div>
+
+                    <p>
+                        Your data is protected through the security controls implemented
+                        by the portal. Sensitive information is handled according to
+                        access permissions and applicable data-protection practices.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-black text-amber-600 dark:text-amber-400 mb-1">
+                        01. Account Security & Authentication
+                    </h4>
+                    <p>
+                        Portal access is restricted through registered account credentials
+                        and server-side authentication. Users must keep their passwords
+                        confidential and must not share their accounts with unauthorized
+                        individuals.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-black text-amber-600 dark:text-amber-400 mb-1">
+                        02. Data Confidentiality
+                    </h4>
+                    <p>
+                        Student profiles, fine records, payment information, leave
+                        applications and administrative records are intended for
+                        authorized portal use. Access is governed by the permissions
+                        assigned to each account.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-black text-amber-600 dark:text-amber-400 mb-1">
+                        03. Encryption & Secure Transmission
+                    </h4>
+                    <p>
+                        Where encryption is configured, protected information is encrypted
+                        during storage or transmission using the applicable security
+                        mechanisms. Secure HTTPS transmission must be enabled in
+                        production.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-black text-amber-600 dark:text-amber-400 mb-1">
+                        04. Audit Trail & Data Integrity
+                    </h4>
+                    <p>
+                        Important administrative activities, fine updates, payment entries
+                        and review decisions may be recorded in the server-side audit
+                        history to support accountability and record integrity.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-black text-amber-600 dark:text-amber-400 mb-1">
+                        05. Authorized Use & Third-Party Access
+                    </h4>
+                    <p>
+                        Users must not attempt unauthorized access, manipulate records,
+                        extract confidential information or share private student data
+                        with unauthorized parties.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-black text-amber-600 dark:text-amber-400 mb-1">
+                        06. Fine Records & Appeals
+                    </h4>
+                    <p>
+                        Students are responsible for reviewing their fine records and
+                        submitting legitimate leave applications or disputes through the
+                        official portal procedures. Administrative decisions are subject
+                        to the applicable class policy.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-black text-amber-600 dark:text-amber-400 mb-1">
+                        07. Responsible Account Usage
+                    </h4>
+                    <p>
+                        Users must provide accurate information, protect their login
+                        credentials and immediately report suspected unauthorized account
+                        activity to the administrator.
+                    </p>
+                </div>
+
+                <!-- Security Footer -->
+                <div class="rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-4">
+                    <div class="flex items-center gap-2 mb-2">
+                        <i class="fa-solid fa-lock text-emerald-500"></i>
+                        <span class="font-black text-emerald-600 dark:text-emerald-400">
+                            SECURITY COMMITMENT
+                        </span>
+                    </div>
+
+                    <p>
+                        CSB-37 Nexus is designed to support controlled access, responsible
+                        information handling and reliable administrative record
+                        management.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div
+                class="p-4 sm:px-6 border-t border-[#e2dcd4] dark:border-[#334155] flex justify-between items-center gap-3">
+                <span class="text-[9px] font-bold text-slate-400 tracking-wider">
+                    CSB-37 NEXUS · SECURITY POLICY
+                </span>
+
+                <button type="button" onclick="closeTermsModal()"
+                    class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-[#161c24] font-black px-5 py-2.5 rounded-xl text-xs shadow-lg shadow-amber-500/20 transition-all">
+                    I Understand
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL: ADD / EDIT FINE -->
+    <div id="fineModal" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 hidden">
+        <div
+            class="bg-white dark:bg-[#1e293b] rounded-2xl shadow-2xl border-2 border-[#e2dcd4] dark:border-[#334155] w-full max-w-md overflow-hidden">
+            <div class="bg-[#1e2530] text-white p-4 flex justify-between items-center">
+                <h3 id="fineModalTitle" class="font-black text-base">
+                    New Fine Entry
+                </h3>
+                <button onclick="closeFineModal()" class="text-slate-400 hover:text-white">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <form id="fineForm" onsubmit="saveFine(event)" class="p-5 space-y-4">
+                <input type="hidden" id="fineEditId" />
+                <div>
+                    <label class="block text-xs font-black text-slate-600 dark:text-slate-300 uppercase mb-1">Select
+                        Student</label>
+                    <select id="modalStudentSelect" required
+                        class="input-premium w-full py-2.5 px-3 rounded-xl text-sm focus:outline-none">
+                        <!-- Options filled via JS -->
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-black text-slate-600 dark:text-slate-300 uppercase mb-1">Violation
+                        Reason</label>
+                    <select id="modalReasonSelect" onchange="updateDefaultAmount()" required
+                        class="input-premium w-full py-2.5 px-3 rounded-xl text-sm focus:outline-none">
+                        <option value="Absent during Test">
+                            Absent during Test (PKR 200)
+                        </option>
+                        <option value="Leave during Test">
+                            Leave during Test (PKR 200)
+                        </option>
+                        <option value="Absent during Study Days">
+                            Absent during Study Days (PKR 150)
+                        </option>
+                        <option value="Absent on Saturday">
+                            Absent on Saturday (PKR 500)
+                        </option>
+                        <option value="Leave on Saturday">
+                            Leave on Saturday (PKR 500)
+                        </option>
+                        <option value="Exceeded Study Days Leave">
+                            Exceeded Study Days Leave (PKR 150)
+                        </option>
+                        <option value="Late Arrival">Late Arrival (PKR 100)</option>
+                        <option value="Uniform Violation">
+                            Uniform Violation (PKR 100)
+                        </option>
+                        <option value="Mobile Usage">Mobile Usage (PKR 300)</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label
+                            class="block text-xs font-black text-slate-600 dark:text-slate-300 uppercase mb-1">Attendance
+                            / Fine Date</label>
+                        <input type="date" id="modalFineDate" required
+                            class="input-premium w-full py-2 px-3 rounded-xl text-sm focus:outline-none" />
+                    </div>
+                    <div>
+                        <label
+                            class="block text-xs font-black text-slate-600 dark:text-slate-300 uppercase mb-1">Applicable
+                            Week</label>
+                        <select id="modalWeekType" class="input-premium w-full py-2.5 px-3 rounded-xl text-sm">
+                            <option value="">
+                                Auto from selected date / saved schedule
+                            </option>
+                            <option value="TEST">Test Week</option>
+                            <option value="STUDY">Study Week</option>
+                            <option value="NORMAL">Normal Week</option>
+                            <option value="SATURDAY">Saturday</option>
+                            <option value="OTHER">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-black text-slate-600 dark:text-slate-300 uppercase mb-1">Amount
+                            (PKR)</label>
+                        <input type="number" id="modalAmountInput" required
+                            class="input-premium w-full py-2 px-3 rounded-xl text-sm focus:outline-none" />
+                    </div>
+                    <div>
+                        <label
+                            class="block text-xs font-black text-slate-600 dark:text-slate-300 uppercase mb-1">Status</label>
+                        <select id="modalStatusSelect" required
+                            class="input-premium w-full py-2.5 px-3 rounded-xl text-sm focus:outline-none">
+                            <option value="Pending">Pending</option>
+                            <option value="Paid">Paid</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="pt-3 flex justify-end space-x-2">
+                    <button type="button" onclick="closeFineModal()"
+                        class="bg-[#f7f5f0] dark:bg-slate-800 hover:bg-[#e2dcd4] text-[#1e2530] dark:text-white font-bold px-4 py-2 rounded-xl text-xs">
+                        Cancel
+                    </button>
+                    <button type="submit"
+                        class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-black px-5 py-2 rounded-xl text-xs shadow">
+                        Save Entry
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: ADD CLASS EXPENSE -->
+    <div id="expenseModal" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 hidden">
+        <div
+            class="bg-white dark:bg-[#1e293b] rounded-2xl shadow-2xl border-2 border-[#e2dcd4] dark:border-[#334155] w-full max-w-md overflow-hidden">
+            <div class="bg-[#1e2530] text-white p-4 flex justify-between items-center">
+                <h3 class="font-black text-base">Add Class Expense</h3>
+                <button onclick="closeAddExpenseModal()" class="text-slate-400 hover:text-white">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <form onsubmit="saveExpense(event)" class="p-5 space-y-4">
+                <div>
+                    <label class="block text-xs font-black text-slate-600 dark:text-slate-300 uppercase mb-1">Event /
+                        Category</label>
+                    <select id="expenseCategory" required
+                        class="input-premium w-full py-2.5 px-3 rounded-xl text-sm focus:outline-none">
+                        <option value="Cultural Day Refreshments">
+                            Cultural Day Refreshments
+                        </option>
+                        <option value="Teachers' Day Gift & Sweets">
+                            Teachers' Day Gift & Sweets
+                        </option>
+                        <option value="Class Party / Sweets">Class Party / Sweets</option>
+                        <option value="Stationery / Utility">Stationery / Utility</option>
+                        <option value="Other Class Expense">Other Class Expense</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-black text-slate-600 dark:text-slate-300 uppercase mb-1">Expense
+                        Comment / Description</label>
+                    <input type="text" id="expenseComment" required
+                        placeholder="e.g. Bought sweets and cold drinks for Cultural Day celebration"
+                        class="input-premium w-full py-2.5 px-3 rounded-xl text-sm focus:outline-none" />
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-black text-slate-600 dark:text-slate-300 uppercase mb-1">Amount
+                            Spent (PKR)</label>
+                        <input type="number" id="expenseAmount" min="1" required placeholder="e.g. 1500"
+                            class="input-premium w-full py-2.5 px-3 rounded-xl text-sm focus:outline-none" />
+                    </div>
+                    <div>
+                        <label
+                            class="block text-xs font-black text-slate-600 dark:text-slate-300 uppercase mb-1">Date</label>
+                        <input type="date" id="expenseDate" required
+                            class="input-premium w-full py-2 px-3 rounded-xl text-sm focus:outline-none" />
+                    </div>
+                </div>
+                <div class="pt-3 flex justify-end space-x-2">
+                    <button type="button" onclick="closeAddExpenseModal()"
+                        class="bg-[#f7f5f0] dark:bg-slate-800 hover:bg-[#e2dcd4] text-[#1e2530] dark:text-white font-bold px-4 py-2 rounded-xl text-xs">
+                        Cancel
+                    </button>
+                    <button type="submit"
+                        class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-black px-5 py-2 rounded-xl text-xs shadow">
+                        Save Expense
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: ADD STUDENT -->
+    <div id="studentModal" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 hidden">
+        <div
+            class="bg-white dark:bg-[#1e293b] rounded-2xl shadow-2xl border-2 border-[#e2dcd4] dark:border-[#334155] w-full max-w-sm overflow-hidden">
+            <div class="bg-[#1e2530] text-white p-4 flex justify-between items-center">
+                <h3 class="font-black text-base">Add New Student</h3>
+                <button onclick="closeStudentModal()" class="text-slate-400 hover:text-white">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <form onsubmit="saveStudent(event)" class="p-5 space-y-4">
+                <div>
+                    <label class="block text-xs font-black text-slate-600 dark:text-slate-300 uppercase mb-1">Roll
+                        Number</label>
+                    <input type="text" id="newRollNo" required placeholder="e.g., CSB-37-026"
+                        class="input-premium w-full py-2.5 px-3 rounded-xl text-sm focus:outline-none" />
+                </div>
+                <div>
+                    <label class="block text-xs font-black text-slate-600 dark:text-slate-300 uppercase mb-1">Student
+                        Name</label>
+                    <input type="text" id="newName" required placeholder="e.g., Muhammad Ali"
+                        class="input-premium w-full py-2.5 px-3 rounded-xl text-sm focus:outline-none" />
+                </div>
+                <div>
+                    <label class="block text-xs font-black text-slate-600 dark:text-slate-300 uppercase mb-1">WhatsApp
+                        Number (International format)</label>
+                    <input type="tel" id="newWhatsAppNumber" placeholder="+923001234567" pattern="\+?[1-9][0-9]{7,14}"
+                        class="input-premium w-full py-2.5 px-3 rounded-xl text-sm" />
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label
+                            class="block text-xs font-black text-slate-600 dark:text-slate-300 uppercase mb-1">Student
+                            Username</label><input id="newStudentUsername" required placeholder="e.g. CSB-37-026"
+                            class="input-premium w-full py-2.5 px-3 rounded-xl text-sm" />
+                    </div>
+                    <div>
+                        <label
+                            class="block text-xs font-black text-slate-600 dark:text-slate-300 uppercase mb-1">Initial
+                            Password</label><input id="newStudentPassword" type="password" minlength="12" required
+                            autocomplete="new-password" placeholder="Minimum 12 characters"
+                            class="input-premium w-full py-2.5 px-3 rounded-xl text-sm" />
+                    </div>
+                </div>
+                <div class="pt-3 flex justify-end space-x-2">
+                    <button type="button" onclick="closeStudentModal()"
+                        class="bg-[#f7f5f0] dark:bg-slate-800 hover:bg-[#e2dcd4] text-[#1e2530] dark:text-white font-bold px-4 py-2 rounded-xl text-xs">
+                        Cancel
+                    </button>
+                    <button type="submit"
+                        class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-black px-5 py-2 rounded-xl text-xs shadow">
+                        Register Student
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: DISPUTE & EMERGENCY LEAVE APPEAL (WITH MANDATORY IMAGE UPLOAD) -->
+    <div id="appealModal" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 hidden">
+        <div
+            class="bg-white dark:bg-[#1e293b] rounded-2xl shadow-2xl border-2 border-[#e2dcd4] dark:border-[#334155] w-full max-w-md overflow-hidden">
+            <div class="bg-[#1e2530] text-white p-4 flex justify-between items-center">
+                <h3 class="font-black text-base">
+                    Submit Dispute / Emergency Leave Appeal
+                </h3>
+                <button onclick="closeAppealModal()" class="text-slate-400 hover:text-white">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <form onsubmit="submitAppeal(event)" class="p-5 space-y-4">
+                <input type="hidden" id="appealFineId" />
+                <div>
+                    <label class="block text-xs font-black text-slate-600 dark:text-slate-300 uppercase mb-1">Reason /
+                        Explanation</label>
+                    <textarea id="appealReasonText" rows="3" required
+                        placeholder="Explain why this fine should be cleared (e.g. approved medical leave, marriage ceremony)..."
+                        class="input-premium w-full p-3 rounded-xl text-xs focus:outline-none"></textarea>
+                </div>
+                <div>
+                    <label class="block text-xs font-black text-slate-600 dark:text-slate-300 uppercase mb-1">Attach
+                        Proof (Medical Report / Marriage Card Image)
+                        <span class="text-rose-500">*Mandatory</span></label>
+                    <input type="file" id="appealImageInput" accept="application/pdf,image/jpeg,image/png" required
+                        onchange="handleImagePreview(event)"
+                        class="input-premium w-full p-2.5 rounded-xl text-xs file:mr-4 file:py-1 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-black file:bg-amber-500 file:text-slate-950" />
+                    <div id="imagePreviewContainer" class="mt-2 hidden">
+                        <img id="imagePreviewTag" src="" alt="Proof Preview"
+                            class="w-full h-32 object-cover rounded-xl border border-slate-300 dark:border-slate-700" />
+                    </div>
+                </div>
+                <div class="pt-3 flex justify-end space-x-2">
+                    <button type="button" onclick="closeAppealModal()"
+                        class="bg-[#f7f5f0] dark:bg-slate-800 hover:bg-[#e2dcd4] text-[#1e2530] dark:text-white font-bold px-4 py-2 rounded-xl text-xs">
+                        Cancel
+                    </button>
+                    <button type="submit"
+                        class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-black px-5 py-2 rounded-xl text-xs shadow">
+                        Submit Appeal with Proof
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: PROOF IMAGE VIEWER -->
+    <div id="proofViewerModal" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 hidden">
+        <div
+            class="bg-white dark:bg-[#1e293b] rounded-3xl shadow-2xl border border-amber-500/40 w-full max-w-lg p-5 space-y-4">
+            <div class="flex justify-between items-center border-b border-slate-200 dark:border-slate-700 pb-3">
+                <h3 class="font-black text-base text-amber-500 flex items-center space-x-2">
+                    <i class="fa-solid fa-image"></i><span>Attached Appeal Proof</span>
+                </h3>
+                <button onclick="closeProofViewer()" class="text-slate-400 hover:text-white">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <div class="text-center">
+                <img id="proofModalImg" src="" alt="Appeal Proof"
+                    class="max-h-[60vh] mx-auto rounded-xl border border-slate-300 dark:border-slate-700 object-contain" />
+            </div>
+            <div class="pt-2 text-right">
+                <button onclick="closeProofViewer()"
+                    class="bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-white font-bold px-4 py-2 rounded-xl text-xs">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: CUSTOM CONFIRMATION MODAL (STUDENTS & EXPENSES) -->
+    <div id="customDeleteModal" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 hidden">
+        <div
+            class="bg-white dark:bg-[#1e293b] rounded-3xl shadow-2xl border border-rose-500/30 w-full max-w-sm p-6 text-center space-y-5 animate-in fade-in zoom-in duration-150">
+            <div
+                class="w-16 h-16 bg-rose-50 dark:bg-rose-950/50 text-rose-600 dark:text-rose-400 rounded-2xl flex items-center justify-center mx-auto text-2xl shadow-inner border border-rose-200 dark:border-rose-900">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <div class="space-y-1.5">
+                <h3 class="text-lg font-black text-[#1e2530] dark:text-white">
+                    Are you sure?
+                </h3>
+                <p id="deleteModalText" class="text-xs font-bold text-slate-500 dark:text-slate-400 leading-relaxed">
+                    Permanently remove selected item?
+                </p>
+            </div>
+            <div class="grid grid-cols-2 gap-3 pt-2">
+                <button type="button" onclick="closeDeleteModal()"
+                    class="w-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-[#1e2530] dark:text-white font-extrabold py-2.5 rounded-xl text-xs transition-all">
+                    Cancel
+                </button>
+                <button type="button" onclick="executeItemRemoval()"
+                    class="w-full bg-rose-600 hover:bg-rose-700 text-white font-black py-2.5 rounded-xl text-xs shadow-lg shadow-rose-600/30 transition-all">
+                    Yes, Remove
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: COMPLETE STUDENT STATEMENT -->
+    <div id="fullStatementModal" class="fixed inset-0 bg-black/70 z-[70] flex items-center justify-center p-3 hidden">
+        <div
+            class="bg-white dark:bg-[#1e293b] text-slate-900 dark:text-slate-100 rounded-2xl shadow-2xl w-full max-w-5xl max-h-[92vh] overflow-hidden flex flex-col">
+            <div class="p-4 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between">
+                <div>
+                    <h3 class="font-black">Complete Fine & Attendance Statement</h3>
+                    <p class="text-xs text-slate-500">
+                        Student profile · attendance · every fine · all payments · balance
+                    </p>
+                </div>
+                <button onclick="closeFullStatement()" class="text-slate-500 text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div id="fullStatementPrintArea" class="p-5 overflow-y-auto">
+                <div id="fullStatementContent" class="space-y-3"></div>
+            </div>
+            <div class="p-4 border-t border-slate-200 dark:border-slate-700 flex justify-end gap-2">
+                <button onclick="closeFullStatement()"
+                    class="px-4 py-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-xs font-bold">
+                    Close</button><button onclick="printFullStatement()"
+                    class="px-4 py-2 rounded-lg bg-amber-500 text-slate-950 text-xs font-black">
+                    <i class="fa-solid fa-file-pdf mr-1"></i> Print / Save PDF
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: WHATSAPP STATEMENT PREVIEW -->
+    <div id="whatsappPreviewModal" class="fixed inset-0 bg-black/70 z-[70] flex items-center justify-center p-3 hidden">
+        <div
+            class="bg-white dark:bg-[#1e293b] text-slate-900 dark:text-slate-100 rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-hidden flex flex-col">
+            <div class="p-4 border-b border-slate-200 dark:border-slate-700 flex justify-between">
+                <div>
+                    <h3 class="font-black">WhatsApp Message Preview</h3>
+                    <p class="text-xs text-slate-500">
+                        Review first. WhatsApp message send manually hoga.
+                    </p>
+                </div>
+                <button onclick="closeWhatsAppPreview()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div id="whatsappPreviewContent" class="p-5 overflow-y-auto text-xs space-y-2"></div>
+            <div class="p-4 border-t border-slate-200 dark:border-slate-700 flex justify-end gap-2">
+                <button onclick="closeWhatsAppPreview()"
+                    class="px-4 py-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-xs font-bold">
+                    Cancel</button><button onclick="openPreparedWhatsApp()"
+                    class="px-4 py-2 rounded-lg bg-emerald-600 text-white text-xs font-black">
+                    <i class="fa-brands fa-whatsapp mr-1"></i> Open WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: PRINTABLE RECEIPT -->
+    <div id="receiptModal" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl shadow-2xl border-2 border-[#e2dcd4] w-full max-w-sm overflow-hidden">
+            <div id="printableReceipt" class="p-6 space-y-4 bg-white text-slate-900">
+                <div class="text-center border-b pb-3 border-slate-200">
+                    <h2 class="font-black text-lg text-slate-900">KIPS COLLEGE</h2>
+                    <p class="text-[10px] font-extrabold uppercase text-amber-600 tracking-wider">
+                        OFFICIAL FINE RECEIPT (CSB-37)
+                    </p>
+                </div>
+                <div class="space-y-1.5 text-xs">
+                    <div class="flex justify-between">
+                        <span class="font-bold text-slate-500">Receipt ID:</span><span id="rcptId"
+                            class="font-black"></span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="font-bold text-slate-500">Student Roll:</span><span id="rcptRoll"
+                            class="font-black"></span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="font-bold text-slate-500">Student Name:</span><span id="rcptName"
+                            class="font-black"></span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="font-bold text-slate-500">Violation:</span><span id="rcptReason"
+                            class="font-semibold"></span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="font-bold text-slate-500">Date Logged:</span><span id="rcptDate"
+                            class="font-semibold"></span>
+                    </div>
+                    <div class="flex justify-between border-t pt-2 border-slate-200">
+                        <span class="font-extrabold">Amount Paid:</span><span id="rcptAmount"
+                            class="font-black text-sm text-emerald-600"></span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="font-extrabold">Payment Status:</span><span
+                            class="font-black text-xs text-emerald-600 uppercase">PAID & CLEARED</span>
+                    </div>
+                </div>
+                <div class="text-center pt-3 border-t border-slate-200">
+                    <p class="text-[9px] text-slate-400 uppercase font-black">
+                        Computer Generated Official Record
+                    </p>
+                </div>
+            </div>
+            <div class="p-4 bg-slate-50 border-t border-slate-200 flex justify-end space-x-2 no-print">
+                <button onclick="closeReceiptModal()"
+                    class="bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold px-4 py-2 rounded-xl text-xs">
+                    Close
+                </button>
+                <button onclick="window.print()"
+                    class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-black px-4 py-2 rounded-xl text-xs shadow">
+                    <i class="fa-solid fa-print mr-1"></i> Print
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js" defer></script>
+    <script src="js/api.js" defer></script>
+    <script src="js/app.js" defer></script>
+    <script src="js/portal-enhancements.js" defer></script>
+</body>
+
+</html>

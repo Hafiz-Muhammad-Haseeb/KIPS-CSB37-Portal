@@ -1,0 +1,23 @@
+{
+  "name": "kips-csb37-portal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:secure": "node scripts/build-production.cjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "cssnano": "^9.9.0",
+    "html-minifier-terser": "^7.2.0",
+    "javascript-obfuscator": "^5.10.0",
+    "parse5": "^7.2.1",
+    "postcss": "^8.5.32",
+    "terser": "^5.51.2"
+  },
+  "private": true
+}

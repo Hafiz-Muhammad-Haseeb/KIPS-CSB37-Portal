@@ -1,0 +1,735 @@
+/* Theme completion layer: light mode is a true white UI; dark mode inherits the existing navy theme. */
+html:not(.dark) {
+  color-scheme: light;
+  --portal-page: #ffffff;
+  --portal-surface: #ffffff;
+  --portal-border: #e2e8f0;
+  --portal-ink: #172033;
+  --portal-muted: #64748b;
+}
+
+html.dark {
+  color-scheme: dark;
+  --portal-page: #0f172a;
+  --portal-surface: #1e293b;
+  --portal-border: #334155;
+  --portal-ink: #f8fafc;
+  --portal-muted: #94a3b8;
+}
+
+html:not(.dark) body {
+  background: var(--portal-page) !important;
+  color: var(--portal-ink) !important;
+}
+
+html:not(.dark) #appContainer,
+html:not(.dark) .content-view,
+html:not(.dark) main {
+  background-color: transparent;
+}
+
+/* Sidebar becomes white in light mode; navy/gold logo and active state remain recognizable. */
+html:not(.dark) #sidebar {
+  background: #ffffff !important;
+  background-image: none !important;
+  color: #172033 !important;
+  border-right: 1px solid #e2e8f0 !important;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, .07) !important;
+}
+
+html:not(.dark) #sidebar [class~="bg-[#161c24]/90"],
+html:not(.dark) #sidebar [class~="bg-[#12171e]/90"],
+html:not(.dark) #sidebar [class~="bg-[#161c24]"],
+html:not(.dark) #sidebar [class~="bg-[#12171e]"] {
+  background: #ffffff !important;
+}
+
+html:not(.dark) #sidebar .text-white,
+html:not(.dark) #sidebar .text-slate-300,
+html:not(.dark) #sidebar .text-slate-200 {
+  color: #334155 !important;
+}
+
+html:not(.dark) #sidebar .text-slate-400,
+html:not(.dark) #sidebar .text-slate-500 {
+  color: #64748b !important;
+}
+
+
+/* ==========================================
+   LIGHT THEME - PREMIUM ORANGE HOVER
+   ========================================== */
+
+   html:not(.dark) #sidebar .nav-btn:hover {
+    background: rgba(245, 158, 11, 0.10) !important;
+    color: #b45309 !important;
+    border-color: #f59e0b !important;
+
+    box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.18);
+}
+
+/* Sidebar icons */
+html:not(.dark) #sidebar .nav-btn:hover svg {
+    color: #d97706 !important;
+}
+
+/* Light theme interactive cards */
+html:not(.dark) .card-premium:hover,
+html:not(.dark) .stat-card:hover,
+html:not(.dark) .interactive-card:hover {
+    border-color: #f59e0b !important;
+    box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.18),
+                0 4px 16px rgba(245, 158, 11, 0.08);
+}
+
+/* Light theme focus */
+html:not(.dark) button:focus-visible,
+html:not(.dark) a:focus-visible,
+html:not(.dark) input:focus-visible,
+html:not(.dark) select:focus-visible,
+html:not(.dark) textarea:focus-visible {
+    outline: 2px solid #f59e0b;
+    outline-offset: 2px;
+}
+
+
+html:not(.dark) #sidebar .nav-btn.bg-slate-800\/80 {
+  background: #f59e0b !important;
+  color: #172033 !important;
+  border-color: rgba(245, 158, 11, .35) !important;
+}
+
+html:not(.dark) #sidebar .border-\[\#2d3748\]\/60,
+html:not(.dark) #sidebar .border-slate-700 {
+  border-color: #e2e8f0 !important;
+}
+
+/* Legacy hard-coded dark utility backgrounds are surfaced as white in light mode. */
+html:not(.dark) [class~="bg-[#0f172a]"],
+html:not(.dark) [class~="bg-[#1e293b]"],
+html:not(.dark) [class~="bg-[#161c24]"],
+html:not(.dark) [class~="bg-[#12171e]"],
+html:not(.dark) [class~="bg-slate-800"],
+html:not(.dark) [class~="bg-slate-900"] {
+  background-color: #ffffff !important;
+  color: #172033 !important;
+}
+
+html:not(.dark) [class~="text-white"]:not(#sidebar):not(.glass-hero-card):not(.bg-amber-500):not(.bg-amber-600):not(.bg-emerald-600):not(.bg-rose-600) {
+  color: inherit;
+}
+
+html:not(.dark) .card-premium {
+  background: #ffffff !important;
+  color: #172033 !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, .045) !important;
+}
+
+html:not(.dark) .input-premium,
+html:not(.dark) select.input-premium,
+html:not(.dark) textarea.input-premium {
+  background: #ffffff !important;
+  color: #172033 !important;
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .input-premium::placeholder {
+  color: #94a3b8 !important;
+}
+
+html:not(.dark) .input-premium:focus {
+  border-color: #f59e0b !important;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, .16) !important;
+}
+
+html:not(.dark) header,
+html:not(.dark) footer {
+  background-color: #ffffff !important;
+  color: #172033;
+  border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) table th {
+  color: #64748b !important;
+}
+
+html:not(.dark) table td {
+  color: #334155;
+}
+
+html:not(.dark) .modal,
+html:not(.dark) [role="dialog"] {
+  background: #ffffff;
+  color: #172033;
+}
+
+html:not(.dark) .bg-\[\#f7f5f0\] {
+  background-color: #f1f5f9 !important;
+}
+
+html:not(.dark) .bg-\[\#e2dcd4\] {
+  background-color: #e2e8f0 !important;
+}
+
+html:not(.dark) .text-\[\#1e2530\] {
+  color: #172033 !important;
+}
+
+html:not(.dark) [class~="bg-[#1e2530]"] {
+  background: #ffffff !important;
+  color: #172033 !important;
+  border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) [class~="bg-[#1e2530]"] .text-white {
+  color: #172033 !important;
+}
+
+html:not(.dark) .border-\[\#334155\] {
+  border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) .bg-gradient-to-b.from-\[\#1a212c\] {
+  background-image: none !important;
+  background-color: #ffffff !important;
+}
+
+/* Keep intentional brand surfaces dark/gold in both themes. */
+.glass-hero-card {
+  color: #ffffff !important;
+}
+
+html:not(.dark) .glass-hero-card {
+  background: #ffffff !important;
+  color: #172033 !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 5px 18px rgba(15, 23, 42, .05) !important;
+}
+
+html:not(.dark) .glass-hero-card .text-white,
+html:not(.dark) .glass-hero-card .text-slate-200 {
+  color: #172033 !important;
+}
+/* 
+html:not(.dark) #view-login {
+  background: #ffffff !important;
+  background-image: none !important;
+} */
+/* 
+html:not(.dark) #view-login>div {
+  background: #ffffff !important;
+  color: #172033 !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 12px 36px rgba(15, 23, 42, .08) !important;
+} */
+/* 
+html:not(.dark) #view-login h1,
+html:not(.dark) #view-login label {
+  color: #172033 !important;
+} */
+
+
+/* 
+html:not(.dark) #view-login p {
+  color: #64748b;
+} */
+
+html:not(.dark) .nav-btn.bg-slate-800\/80 {
+  background: #f59e0b !important;
+  color: #172033 !important;
+}
+
+/* New modal / view refinements. */
+#fullStatementPrintArea {
+  background: #ffffff;
+  color: #172033;
+}
+
+#fullStatementContent table {
+  min-width: 680px;
+}
+
+#fullStatementContent th,
+#fullStatementContent td {
+  vertical-align: top;
+}
+
+#whatsappPreviewContent pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  line-height: 1.65;
+}
+
+.portal-fallback-toast {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 10000;
+  padding: 12px 16px;
+  border-radius: 12px;
+  color: white;
+  background: #334155;
+  font-size: 12px;
+  font-weight: 800;
+  box-shadow: 0 8px 24px #0002;
+}
+
+.portal-fallback-toast.error {
+  background: #be123c;
+}
+
+.portal-fallback-toast.success {
+  background: #047857;
+}
+
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+
+  #fullStatementModal,
+  #fullStatementModal * {
+    visibility: visible !important;
+  }
+
+  #fullStatementModal {
+    position: absolute !important;
+    inset: 0 !important;
+    display: block !important;
+    background: #ffffff !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  #fullStatementModal>div {
+    max-height: none !important;
+    height: auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+  }
+
+  #fullStatementModal>div>div:first-child,
+  #fullStatementModal>div>div:last-child {
+    display: none !important;
+  }
+
+  #fullStatementPrintArea {
+    overflow: visible !important;
+    padding: 0 !important;
+  }
+
+  #fullStatementContent {
+    color: #111827 !important;
+  }
+
+  #fullStatementContent table {
+    font-size: 9pt !important;
+  }
+}
+
+/* =========================================
+   CSB-37 NEXUS - MOBILE RESPONSIVENESS FIX
+========================================= */
+
+/* Prevent unwanted horizontal page overflow */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Background scrolling while drawer is open */
+body.sidebar-open {
+    overflow: hidden !important;
+}
+
+/* Mobile sidebar scrolling */
+#sidebar {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+}
+
+/* Overlay must never intercept touches while hidden */
+#sidebarOverlay.hidden {
+    display: none !important;
+    pointer-events: none !important;
+}
+
+/* Mobile and tablet layout */
+@media screen and (max-width: 1023px) {
+
+    #appContainer {
+        width: 100%;
+        min-width: 0;
+        overflow-x: clip;
+    }
+
+    #sidebar {
+        width: 256px;
+        max-width: 88vw;
+        height: 100vh;
+        height: 100dvh;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    #sidebarOverlay {
+        position: fixed;
+        inset: 0;
+        z-index: 40;
+        -webkit-backdrop-filter: blur(3px);
+        backdrop-filter: blur(3px);
+    }
+
+    /* Main content */
+    #appContainer > div.flex-grow {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        padding-left: 0 !important;
+    }
+
+    #appContainer main {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    #appContainer .content-view {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    #appContainer .content-view > div {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    /* Responsive grids */
+    #appContainer .content-view .grid {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    #appContainer .content-view .grid > * {
+        min-width: 0;
+    }
+
+    /* Tables scroll inside their containers */
+    #appContainer .overflow-x-auto {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: contain;
+    }
+
+    /* Prevent form controls from expanding the layout */
+    #appContainer input,
+    #appContainer select,
+    #appContainer textarea {
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    /* Mobile header */
+    #appContainer header {
+        max-width: 100%;
+        min-width: 0;
+    }
+}
+
+/* Small mobile phones */
+@media screen and (max-width: 480px) {
+
+    #appContainer main {
+        padding: 12px;
+    }
+
+    #appContainer header {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    #appContainer .content-view {
+        gap: 16px;
+    }
+
+    #aiSupportWidget {
+        right: 12px;
+        bottom: 12px;
+    }
+
+    #aiChatWindow {
+        width: min(90vw, 360px);
+        height: min(70dvh, 480px);
+    }
+}
+
+
+/* =====================================================
+   CSB-37 NEXUS — LOGIN PAGE COLOR RESTORATION
+   Scope: Login page only
+   ===================================================== */
+
+/* Main login background */
+#view-login {
+  background-color: #0b1118 !important;
+  color: #f1f5f9 !important;
+}
+
+/* Main login card */
+#view-login .nexus-card {
+  background-color: #17212d;
+  border-color: rgba(245, 158, 11, 0.20) !important;
+}
+
+/* Desktop brand panel */
+#view-login .nexus-card > section:first-of-type {
+  background: linear-gradient(
+      135deg,
+      #1b2633,
+      #131d28,
+      #0e1721
+  ) !important;
+}
+
+/* Login panel */
+#view-login .nexus-card > section:last-of-type {
+  background: linear-gradient(
+      135deg,
+      #1b2633,
+      #17212d,
+      #121b26
+  ) !important;
+}
+
+/* Restore heading colors */
+#view-login h1,
+#view-login h2 {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #f1f5f9 !important;
+}
+
+/* Gold heading highlights */
+#view-login h1 span,
+#view-login h2 span {
+  color: #fbbf24 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Login header — remove unwanted white rectangle */
+#view-login header {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Login descriptions */
+#view-login header p {
+  color: #94a3b8 !important;
+}
+
+/* Form labels */
+#view-login form label {
+  color: #cbd5e1 !important;
+}
+
+/* Login input fields */
+#view-login input:not([type="checkbox"]) {
+  background-color: #101923 !important;
+  color: #f1f5f9 !important;
+  border-color: #334155 !important;
+}
+
+#view-login input:not([type="checkbox"])::placeholder {
+  color: #94a3b8 !important;
+  opacity: 1;
+}
+
+/* Input focus */
+#view-login input:not([type="checkbox"]):focus {
+  border-color: #f59e0b !important;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.12) !important;
+}
+
+/* Preserve gold login button */
+#view-login form button[type="submit"] {
+  color: #161c24 !important;
+}
+
+/* Terms button */
+#view-login form label button {
+  color: #fbbf24 !important;
+  background: transparent !important;
+}
+
+/* Security panel */
+#view-login .nexus-card > section:last-of-type > div:last-of-type {
+  background-color: #101822;
+}
+
+/* Keep login page independent of dashboard theme */
+#view-login,
+#view-login * {
+  scrollbar-color: #475569 #101822;
+}
+
+
+/* =====================================================
+   CSB-37 NEXUS — FINAL LOGIN PAGE THEME
+   Login page stays NAVY + GOLD in both themes.
+   ===================================================== */
+
+/* Entire login viewport */
+#view-login {
+  background: #0b1118 !important;
+  background-color: #0b1118 !important;
+  background-image: none !important;
+  color: #f1f5f9 !important;
+}
+
+/* Prevent light-theme rules from turning decorative layers white */
+#view-login > div:not(.nexus-card) {
+  background-color: transparent !important;
+  color: inherit !important;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+/* Main login card */
+#view-login .nexus-card {
+  background: #17212d !important;
+  border: 1px solid rgba(245, 158, 11, 0.20) !important;
+  color: #f1f5f9 !important;
+}
+
+/* Left brand panel */
+#view-login .nexus-card > section:first-of-type {
+  background: linear-gradient(
+      135deg,
+      #1b2633,
+      #131d28,
+      #0e1721
+  ) !important;
+  color: #f1f5f9 !important;
+}
+
+/* Right authentication panel */
+#view-login .nexus-card > section:last-of-type {
+  background: linear-gradient(
+      135deg,
+      #1b2633,
+      #17212d,
+      #121b26
+  ) !important;
+  color: #f1f5f9 !important;
+}
+
+/* Main headings */
+#view-login h1,
+#view-login h2 {
+  color: #f1f5f9 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Gold heading highlights */
+#view-login h1 span,
+#view-login h2 span {
+  color: #fbbf24 !important;
+  background: transparent !important;
+}
+
+/* Login header */
+#view-login header {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #f1f5f9 !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+#view-login header p {
+  color: #94a3b8 !important;
+}
+
+/* Labels */
+#view-login form label {
+  color: #cbd5e1 !important;
+}
+
+/* Input fields */
+#view-login input:not([type="checkbox"]) {
+  background: #101923 !important;
+  color: #f1f5f9 !important;
+  border: 1px solid #334155 !important;
+}
+
+#view-login input:not([type="checkbox"])::placeholder {
+  color: #94a3b8 !important;
+  opacity: 1 !important;
+}
+
+#view-login input:not([type="checkbox"]):focus {
+  border-color: #f59e0b !important;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.12) !important;
+}
+
+/* Checkbox */
+#view-login input[type="checkbox"] {
+  accent-color: #f59e0b !important;
+}
+
+/* Terms link */
+#view-login form label button {
+  color: #fbbf24 !important;
+  background: transparent !important;
+}
+
+/* Gold submit button */
+#view-login form button[type="submit"] {
+  color: #161c24 !important;
+}
+
+/* Mobile hero */
+#view-login .nexus-glow {
+  background-color: rgba(251, 191, 36, 0.15) !important;
+}
+
+/* Security panel */
+#view-login .nexus-card > section:last-of-type > div:last-of-type {
+  background-color: #101822;
+}
+
+/* Preserve original text colors in feature descriptions */
+#view-login .text-slate-100,
+#view-login .text-slate-200 {
+  color: #e2e8f0 !important;
+}
+
+#view-login .text-slate-400 {
+  color: #94a3b8 !important;
+}
+
+#view-login .text-slate-500 {
+  color: #64748b !important;
+}
+
+#view-login .text-amber-400,
+#view-login .text-amber-300 {
+  color: #fbbf24 !important;
+}
+
+/* Login page transitions and decorative layers */
+#view-login .nexus-card {
+  isolation: isolate;
+}
